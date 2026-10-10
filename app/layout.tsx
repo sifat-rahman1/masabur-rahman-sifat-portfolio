@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: site.meta.title,
-    template: "%s ■ Masabur Rahman Sifat",
+    template: "%s | Masabur Rahman Sifat",
   },
   description: site.meta.description,
   applicationName: site.name,
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: site.meta.title,
+    title: "Masabur Rahman Sifat | Creative Engineer & UI/UX Designer",
     description: site.meta.description,
     type: "website",
     siteName: site.name,
@@ -84,7 +84,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: site.meta.title,
+    title: "Masabur Rahman Sifat | Creative Engineer & UI/UX Designer",
     description: site.meta.description,
     images: [
       {
@@ -135,6 +135,7 @@ export default function RootLayout({
         image: `${SITE_URL}/hero-photo.png`,
         jobTitle: "Creative Engineer & UI/UX Designer",
         description: site.meta.description,
+        sameAs: ["https://github.com/sifat-rahman1/"],
         address: {
           "@type": "PostalAddress",
           addressCountry: "Bangladesh",

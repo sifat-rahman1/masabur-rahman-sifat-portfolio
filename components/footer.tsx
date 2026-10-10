@@ -98,7 +98,7 @@ export function Footer() {
             &copy; {year} Masabur Rahman Sifat — {footer.legal}
           </span>
           <a
-            href="#home"
+            href="/#home"
             className="group inline-flex w-fit items-center gap-2 font-mono text-[11px] tracking-widest text-white/60 uppercase transition-colors duration-200 hover:text-white"
           >
             {footer.backToTop}

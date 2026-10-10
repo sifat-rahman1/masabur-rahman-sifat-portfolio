@@ -4,12 +4,12 @@ import { BlogArchive } from "@/components/blog-archive"
 import { PagePreloader } from "@/components/page-preloader"
 
 export const metadata: Metadata = {
-  title: "Blog — Engineering, Design & Anti-Slop Web Architecture",
+  title: "Blog",
   description:
-    "Deep dives into performance optimisation, bespoke frontend systems, and conversion-focused UI design by Sifat — Frontend Engineer & UI/UX Architect.",
+    "Frontend architecture, anti-slop design, and Next.js optimization by Sifat — Creative Engineer & UI/UX Designer.",
   alternates: { canonical: "/blog" },
   openGraph: {
-    title: "Blog — Engineering, Design & Anti-Slop Web Architecture",
+    title: "Blog",
     description:
       "Deep dives into performance optimisation, bespoke frontend systems, and conversion-focused UI design.",
     url: "/blog",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blog — Engineering, Design & Anti-Slop Web Architecture",
+    title: "Blog",
     description:
       "Deep dives into performance optimisation, bespoke frontend systems, and conversion-focused UI design.",
     images: ["/og-image.png"],

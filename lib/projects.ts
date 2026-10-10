@@ -71,7 +71,7 @@ export const projects: readonly Project[] = [
     href: "/projects/nebula",
     ctaLabel: "VIEW CASE STUDY",
     media: { kind: "image", src: "/nebula-digital-ss.png", width: 1893, height: 1078 },
-    seoTitle: "Nebula Digital Agency — Case Study",
+    seoTitle: "Nebula Digital Agency",
     seoDescription:
       "B2B agency homepage with lead capture tools and an interactive ROI calculator. Next.js, Tailwind CSS, Formspree, Vercel.",
     ogDescription:
@@ -90,9 +90,9 @@ export const projects: readonly Project[] = [
     href: "/projects/chorma",
     ctaLabel: "VIEW CASE STUDY",
     media: { kind: "image", src: "/chorma-ss.png", width: 1918, height: 1078 },
-    seoTitle: "Chorma: Anti-Slop Motion Design — Case Study",
+    seoTitle: "Chorma Agency Site",
     seoDescription:
-      "Performance-obsessed Next.js agency platform from Chandpur, BD: magnetic GPU hover physics, orbital loaders, and WCAG-exact dark/light themes. Next.js, Tailwind CSS, Netlify.",
+      "Performance-focused agency site with custom micro-interactions and GPU motion. Built with Next.js and TypeScript.",
     ogDescription:
       "Slick, buttery interactions without the bloat: magnetic buttons, custom orbital loaders, exact-contrast themes.",
     card: {
@@ -109,7 +109,7 @@ export const projects: readonly Project[] = [
     ctaLabel: "VIEW CASE STUDY",
     media: { kind: "image", src: "/sparkleclean-ss.png", width: 1894, height: 1078 },
     seoTitle:
-      "Sparkle Clean — House Cleaning Service Website (Chandpur, Bangladesh)",
+      "Sparkle Clean Chandpur",
     seoDescription:
       "High-performance landing page for a house cleaning service in Chandpur, Bangladesh — clear service tiers, WhatsApp booking flow, and an ultra-fast zero-dependency build.",
     ogDescription:
@@ -128,9 +128,9 @@ export const projects: readonly Project[] = [
     href: "/projects/movemate-moving-planner",
     ctaLabel: "VIEW CASE STUDY",
     media: { kind: "image", src: "/movemate-ss.png", width: 1896, height: 1078 },
-    seoTitle: "MoveMate — Moving Planner Web App Case Study",
+    seoTitle: "MoveMate Planner",
     seoDescription:
-      "MoveMate is a moving planner web app that helps users organize tasks, estimate costs, and prepare for moving day with a checklist, timeline, and clean responsive design.",
+      "Moving planner web app with a checklist, task tracker, cost estimator, and timeline. Plan moving day without scattered notes.",
     ogDescription:
       "A calm, structured moving planner: checklist, task tracker, live cost estimator, and timeline. Vanilla JS, zero framework bloat.",
     card: {
@@ -147,9 +147,9 @@ export const projects: readonly Project[] = [
     href: "/projects/contentforge",
     ctaLabel: "VIEW CASE STUDY",
     media: { kind: "image", src: "/Content-forge-desktop.png", width: 1309, height: 697 },
-    seoTitle: "ContentForge — AI Content Workspace | Portfolio Case Study",
+    seoTitle: "ContentForge Workspace",
     seoDescription:
-      "Explore ContentForge, an experimental AI content creation app built with React to help creators generate ideas, hooks, captions, scripts, and organize social media content.",
+      "Experimental AI content workspace for faster social creation: ideas, hooks, captions, scripts, and planning in one surface.",
     ogDescription:
       "An experimental AI workspace for faster social creation: ideas, hooks, captions, scripts, and planning in one focused surface.",
     card: {

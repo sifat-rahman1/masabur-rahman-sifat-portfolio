@@ -18,7 +18,7 @@ const MENU_ITEMS = [
   { label: "GALLERY", href: "/gallery" },
   { label: "BLOG", href: "/blog" },
   { label: "TOOLS", href: "/tools" },
-  { label: "FREE RESOURCES", href: "/resources" },
+  { label: "RESOURCES", href: "/resources" },
   { label: "CONTACT", href: "/contact" },
 ]
 

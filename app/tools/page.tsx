@@ -6,12 +6,12 @@ import { toolCount, toolGroups } from "@/lib/tools"
 import { PagePreloader } from "@/components/page-preloader"
 
 export const metadata: Metadata = {
-  title: "Tools & tech stack",
+  title: "Tools",
   description:
     "The tools and stack Sifat builds with, grouped by the job each piece does.",
   alternates: { canonical: "/tools" },
   openGraph: {
-    title: "Tools & tech stack",
+    title: "Tools",
     description:
       "The tools and stack Sifat builds with, grouped by the job each piece does.",
     url: "/tools",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tools & tech stack",
+    title: "Tools",
     description:
       "The tools and stack Sifat builds with, grouped by the job each piece does.",
     images: ["/og-image.png"],

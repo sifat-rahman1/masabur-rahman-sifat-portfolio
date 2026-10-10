@@ -6,12 +6,12 @@ import { resourceCategories, resources } from "@/lib/resources"
 import { PagePreloader } from "@/components/page-preloader"
 
 export const metadata: Metadata = {
-  title: "Free Web Development & Design Resources",
+  title: "Resources",
   description:
     "Free resources for web developers and designers: UI kits, icon sets, type foundries, stock assets and hosting.",
   alternates: { canonical: "/resources" },
   openGraph: {
-    title: "Free Web Development & Design Resources",
+    title: "Resources",
     description:
       "Free resources for web developers and designers: UI kits, icon sets, type foundries, stock assets and hosting.",
     url: "/resources",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Web Development & Design Resources",
+    title: "Resources",
     description:
       "Free resources for web developers and designers: UI kits, icon sets, type foundries, stock assets and hosting.",
     images: ["/og-image.png"],

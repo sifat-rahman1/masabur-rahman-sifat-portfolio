@@ -1,10 +1,32 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Contact — Start a Project",
+  title: "Contact",
   description:
-    "Tell me what you're building, who it's for, and your timeline. Every brief gets a reply — no newsletters, no follow-up sequences.",
+    "Start a project with Sifat — brief form, email, and 24-hour reply. Frontend, UI, and graphic design.",
   alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact",
+    description:
+      "Start a project with Sifat — brief form, email, and 24-hour reply.",
+    url: "/contact",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Masabur Rahman Sifat — Contact",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact",
+    description:
+      "Start a project with Sifat — brief form, email, and 24-hour reply.",
+    images: ["/og-image.png"],
+  },
 }
 
 export default function ContactLayout({

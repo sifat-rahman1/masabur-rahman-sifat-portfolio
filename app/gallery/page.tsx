@@ -6,12 +6,12 @@ import { DRIFT_WALL_IMAGES } from "@/data/galleryData"
 import { PagePreloader } from "@/components/page-preloader"
 
 export const metadata: Metadata = {
-  title: "Design Gallery",
+  title: "Gallery",
   description:
     "A curated vault of posters, vector illustrations and visual experiments by Sifat.",
   alternates: { canonical: "/gallery" },
   openGraph: {
-    title: "Design Gallery",
+    title: "Gallery",
     description:
       "A curated vault of posters, vector illustrations and visual experiments by Sifat.",
     url: "/gallery",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Design Gallery",
+    title: "Gallery",
     description:
       "A curated vault of posters, vector illustrations and visual experiments by Sifat.",
     images: ["/og-image.png"],
