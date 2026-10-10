@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-default.png",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Masabur Rahman Sifat — Design Gallery",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: "Design Gallery",
     description:
       "A curated vault of posters, vector illustrations and visual experiments by Sifat.",
-    images: ["/og-default.png"],
+    images: ["/og-image.png"],
   },
 }
 

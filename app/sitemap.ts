@@ -3,8 +3,9 @@ import { projects } from "@/lib/projects"
 import { BLOG_POSTS } from "@/data/blogs"
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  // Production domain; falls back to the live domain when unset locally.
-  const baseUrl = "https://masabur-sifat.vercel.app";
+  // Production domain; honors the env override like layout + robots.
+  const baseUrl =
+    process.env.NEXT_PUBLIC_SITE_URL || "https://masabur-sifat.vercel.app";
   // Core static routes. Only real pages live here: /about and /projects are
   // deleted, and /services and /education are homepage anchors
   // (#services, …), not routes — listing them would ship 404s to crawlers.

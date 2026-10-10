@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-default.png",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Masabur Rahman Sifat — Blog",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "Blog — Engineering, Design & Anti-Slop Web Architecture",
     description:
       "Deep dives into performance optimisation, bespoke frontend systems, and conversion-focused UI design.",
-    images: ["/og-default.png"],
+    images: ["/og-image.png"],
   },
 }
 

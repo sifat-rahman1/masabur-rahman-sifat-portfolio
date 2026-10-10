@@ -6,6 +6,10 @@ import { BLOG_POSTS, getPostBySlug } from "@/data/blogs"
 import { ReadingProgress } from "@/components/reading-progress"
 import { ArticleBody } from "@/components/article-body"
 
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://masabur-sifat.vercel.app"
+
+
 /* ── Static params ─────────────────────────────────────────────────── */
 export function generateStaticParams() {
     return BLOG_POSTS.map((p) => ({ slug: p.slug }))
@@ -87,16 +91,16 @@ export default async function ArticlePage({
             "@type": "Person",
             name: post.author.name,
             jobTitle: post.author.role,
-            url: "https://sifatrahman.com",
+            url: SITE_URL,
         },
         publisher: {
             "@type": "Person",
             name: "Sifat",
-            url: "https://sifatrahman.com",
+            url: SITE_URL,
         },
         mainEntityOfPage: {
             "@type": "WebPage",
-            "@id": `https://sifatrahman.com/blog/${post.slug}`,
+            "@id": `${SITE_URL}/blog/${post.slug}`,
         },
     }
 

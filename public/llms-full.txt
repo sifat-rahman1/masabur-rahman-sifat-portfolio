@@ -26,34 +26,34 @@ Masabur Rahman Sifat is a Creative Engineer and UI/UX Designer based in Banglade
 ## Full Case Study Registry
 
 ### 1. Nebula Digital Agency
-- **URL**: [https://sifatrahman.com/projects/nebula](https://sifatrahman.com/projects/nebula)
+- **URL**: [https://masabur-sifat.vercel.app/projects/nebula](https://masabur-sifat.vercel.app/projects/nebula)
 - **Stack**: Next.js, Tailwind CSS, Formspree API, Vercel
 - **Description**: High-converting digital agency platform built with high-contrast obsidian aesthetic, custom theme toggle, interactive ROI calculator, AJAX lead capture, and zero layout shift. 100/100 Lighthouse performance metrics.
 
 ### 2. Chorma Agency Site
-- **URL**: [https://sifatrahman.com/projects/chorma](https://sifatrahman.com/projects/chorma)
+- **URL**: [https://masabur-sifat.vercel.app/projects/chorma](https://masabur-sifat.vercel.app/projects/chorma)
 - **Stack**: Next.js App Router, Tailwind CSS, Framer Motion, Netlify
 - **Description**: Performance-focused agency platform from Chandpur, BD featuring magnetic GPU hover physics, transform-only orbital loaders, WCAG AAA dark/light theme switching, and <12KB purged CSS.
 
 ### 3. Sparkle Clean Chandpur
-- **URL**: [https://sifatrahman.com/projects/sparkle-clean-chandpur](https://sifatrahman.com/projects/sparkle-clean-chandpur)
+- **URL**: [https://masabur-sifat.vercel.app/projects/sparkle-clean-chandpur](https://masabur-sifat.vercel.app/projects/sparkle-clean-chandpur)
 - **Stack**: HTML5, Vanilla CSS3, Modular JS (Zero External Runtime Dependencies)
 - **Description**: Ultra-fast single-page local cleaning service web app (~75 KB total weight) built for instant loading on mobile 3G/4G networks in Chandpur, Bangladesh with direct pre-filled WhatsApp booking flow and LocalBusiness JSON-LD schema.
 
 ### 4. MoveMate — Moving Planner Web App
-- **URL**: [https://sifatrahman.com/projects/movemate-moving-planner](https://sifatrahman.com/projects/movemate-moving-planner)
+- **URL**: [https://masabur-sifat.vercel.app/projects/movemate-moving-planner](https://masabur-sifat.vercel.app/projects/movemate-moving-planner)
 - **Stack**: HTML, CSS, JavaScript, Devin AI
 - **Description**: Structured, calm moving planner web application featuring interactive task checklist, room-by-room inventory tracker, live cost estimator, moving timeline, and responsive zero-bloat architecture.
 
 ### 5. ContentForge — AI Content Workspace
-- **URL**: [https://sifatrahman.com/projects/contentforge](https://sifatrahman.com/projects/contentforge)
+- **URL**: [https://masabur-sifat.vercel.app/projects/contentforge](https://masabur-sifat.vercel.app/projects/contentforge)
 - **Stack**: React, Tailwind CSS, LocalStorage
 - **Description**: Experimental AI content workspace for digital creators to generate social media content ideas, hooks, captions, scripts, and plan publishing schedules on one focused surface.
 
 ---
 
 ## Contact & Social Links
-- Portfolio: [https://sifatrahman.com](https://sifatrahman.com)
+- Portfolio: [https://masabur-sifat.vercel.app](https://masabur-sifat.vercel.app)
 - GitHub: [https://github.com/sifat-rahman1](https://github.com/sifat-rahman1)
 - Email: [masabur.rahman.sifat@outlook.com](mailto:masabur.rahman.sifat@outlook.com)
-- Contact: [https://sifatrahman.com/#contact](https://sifatrahman.com/#contact)
+- Contact: [https://masabur-sifat.vercel.app/#contact](https://masabur-sifat.vercel.app/#contact)

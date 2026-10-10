@@ -11,16 +11,16 @@ Masabur Rahman Sifat builds high-contrast, production-grade web applications and
 - **Tooling & Platforms**: VS Code, Git, Vercel, Netlify, Node.js
 
 ## Featured Projects
-- [Nebula Digital Agency](https://sifatrahman.com/projects/nebula): Web platform with dynamic theme toggling, Formspree lead capture, interactive ROI calculator, and performance optimizations.
-- [Chorma Agency Site](https://sifatrahman.com/projects/chorma): Dark-mode interactive web showcase with custom loading overlays, orbital motion design, and magnetic cursor physics.
-- [Sparkle Clean](https://sifatrahman.com/projects/sparkle-clean-chandpur): Zero-dependency local cleaning service platform optimized for Chandpur, Bangladesh with direct WhatsApp booking.
-- [MoveMate Moving Planner](https://sifatrahman.com/projects/movemate-moving-planner): Interactive moving planner web app with checklist, cost estimator, timeline, and zero framework bloat.
-- [ContentForge](https://sifatrahman.com/projects/contentforge): Experimental AI content creation workspace for social media creators with hook, caption, and script generators.
+- [Nebula Digital Agency](https://masabur-sifat.vercel.app/projects/nebula): Web platform with dynamic theme toggling, Formspree lead capture, interactive ROI calculator, and performance optimizations.
+- [Chorma Agency Site](https://masabur-sifat.vercel.app/projects/chorma): Dark-mode interactive web showcase with custom loading overlays, orbital motion design, and magnetic cursor physics.
+- [Sparkle Clean](https://masabur-sifat.vercel.app/projects/sparkle-clean-chandpur): Zero-dependency local cleaning service platform optimized for Chandpur, Bangladesh with direct WhatsApp booking.
+- [MoveMate Moving Planner](https://masabur-sifat.vercel.app/projects/movemate-moving-planner): Interactive moving planner web app with checklist, cost estimator, timeline, and zero framework bloat.
+- [ContentForge](https://masabur-sifat.vercel.app/projects/contentforge): Experimental AI content creation workspace for social media creators with hook, caption, and script generators.
 
 ## Optional Deep Context
-- Full detailed project specs, technical breakdown, and articles: [llms-full.txt](https://sifatrahman.com/llms-full.txt)
+- Full detailed project specs, technical breakdown, and articles: [llms-full.txt](https://masabur-sifat.vercel.app/llms-full.txt)
 
 ## Contact & Links
-- Website: [https://sifatrahman.com](https://sifatrahman.com)
+- Website: [https://masabur-sifat.vercel.app](https://masabur-sifat.vercel.app)
 - GitHub: [https://github.com/sifat-rahman1](https://github.com/sifat-rahman1)
 - Email: [masabur.rahman.sifat@outlook.com](mailto:masabur.rahman.sifat@outlook.com)

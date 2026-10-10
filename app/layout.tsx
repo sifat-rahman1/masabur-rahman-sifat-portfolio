@@ -43,7 +43,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 })
 
 const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://sifatrahman.com"
+  process.env.NEXT_PUBLIC_SITE_URL || "https://masabur-sifat.vercel.app"
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/og-default.png",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Masabur Rahman Sifat — Creative Engineer & UI/UX Designer",
@@ -88,7 +88,7 @@ export const metadata: Metadata = {
     description: site.meta.description,
     images: [
       {
-        url: "/og-default.png",
+        url: "/og-image.png",
         alt: "Masabur Rahman Sifat — Creative Engineer & UI/UX Designer",
       },
     ],
