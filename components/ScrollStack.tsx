@@ -1,0 +1,227 @@
+'use client'
+
+import React, { useRef } from 'react'
+import { motion, useScroll, useTransform, MotionValue } from 'framer-motion'
+import {
+  WebDevMockup,
+  UiUxMockup,
+  GraphicDesignMockup,
+  AiAutomationMockup,
+} from '@/components/service-mockups'
+
+export interface ServiceCardData {
+  id: number
+  index: string
+  title: string
+  category: string
+  tagline: string
+  deliverables: string[]
+  bgColor: string
+  borderAccent: string
+  isDarkText: boolean
+}
+
+const SERVICE_CARDS: ServiceCardData[] = [
+  {
+    id: 1,
+    index: '01',
+    title: 'Web Development',
+    category: 'Engineering & Performance',
+    tagline: 'High-performance interactive web platforms built with Next.js, React 19, and fluid physics.',
+    deliverables: ['Full-stack Next.js Apps', 'Micro-interactions & Physics', 'Clean Server Components', 'Lighthouse 99+ Scores'],
+    bgColor: 'bg-blue-600', // Solid Electric Blue
+    borderAccent: 'border-blue-400/30',
+    isDarkText: false,
+  },
+  {
+    id: 2,
+    index: '02',
+    title: 'UI/UX Design',
+    category: 'Product Strategy & Systems',
+    tagline: 'Design systems, interactive prototypes, and typography-led editorial user interfaces.',
+    deliverables: ['Design System Tokens', 'Figma Wireframes & Prototyping', 'Responsive Art Direction', 'A11y Accessibility Focus'],
+    bgColor: 'bg-emerald-500', // Solid Bright Mint/Emerald
+    borderAccent: 'border-emerald-600/30',
+    isDarkText: true,
+  },
+  {
+    id: 3,
+    index: '03',
+    title: 'Graphic Design & Branding',
+    category: 'Visual Identity & Creative Direction',
+    tagline: 'Striking brand typography, 3D visual assets, and high-impact editorial layouts.',
+    deliverables: ['Editorial Portfolios & Posters', '3D Layer Composition', 'Brand Guidelines & Identity', 'Vector Iconography & Assets'],
+    bgColor: 'bg-orange-500', // Solid Vibrant Coral/Tangerine
+    borderAccent: 'border-orange-600/30',
+    isDarkText: true,
+  },
+  {
+    id: 4,
+    index: '04',
+    title: 'AI & Automation',
+    category: 'Autonomous Workflows & Agents',
+    tagline: 'Autonomous AI pipelines, LLM agent integration, and prompt-to-production workflows.',
+    deliverables: ['Multi-Agent Automations', 'Custom Tooling & Webhooks', 'Structured LLM Pipelines', 'Zero-Manual Overhead'],
+    bgColor: 'bg-yellow-400', // Solid Cyber Yellow
+    borderAccent: 'border-yellow-500/40',
+    isDarkText: true,
+  },
+]
+
+function renderMockup(id: number) {
+  switch (id) {
+    case 1:
+      return <WebDevMockup />
+    case 2:
+      return <UiUxMockup />
+    case 3:
+      return <GraphicDesignMockup />
+    case 4:
+      return <AiAutomationMockup />
+    default:
+      return null
+  }
+}
+
+interface StackCardProps {
+  card: ServiceCardData
+  index: number
+  total: number
+  progress: MotionValue<number>
+}
+
+function StackCard({ card, index, total, progress }: StackCardProps) {
+  const step = 1 / total
+  const cardStart = index * step
+  const nextCardStart = (index + 1) * step
+
+  const scale = useTransform(
+    progress,
+    [cardStart, nextCardStart],
+    [1, index === total - 1 ? 1 : 0.94]
+  )
+
+  const brightness = useTransform(
+    progress,
+    [cardStart, nextCardStart],
+    [1, index === total - 1 ? 1 : 0.78]
+  )
+
+  const filter = useTransform(brightness, (b) => `brightness(${b})`)
+
+  return (
+    <motion.div
+      style={{
+        scale,
+        filter,
+        top: `calc(13vh + ${index * 16}px)`,
+      }}
+      className={`sticky w-full rounded-sm p-6 sm:p-8 md:p-10 ${card.bgColor} ${card.borderAccent} border shadow-[0_25px_60px_rgba(0,0,0,0.35)] ${
+        card.isDarkText ? 'text-zinc-950' : 'text-white'
+      } transform-gpu will-change-transform overflow-hidden`}
+    >
+      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        {/* Left Information Column */}
+        <div className="lg:col-span-5 space-y-4">
+          <div className="flex items-center gap-3">
+            <span
+              className={`font-mono text-xs px-2.5 py-1 rounded-full ${
+                card.isDarkText
+                  ? 'bg-black/10 border border-black/20 text-zinc-950 font-bold'
+                  : 'bg-white/15 border border-white/25 text-white font-semibold'
+              }`}
+            >
+              {card.index}
+            </span>
+            <span
+              className={`text-xs uppercase tracking-widest font-bold ${
+                card.isDarkText ? 'text-zinc-950/70' : 'text-white/80'
+              }`}
+            >
+              {card.category}
+            </span>
+          </div>
+
+          <h3
+            className={`font-display text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight ${
+              card.isDarkText ? 'text-zinc-950' : 'text-white'
+            }`}
+          >
+            {card.title}
+          </h3>
+
+          <p
+            className={`text-sm sm:text-base leading-relaxed max-w-[42ch] ${
+              card.isDarkText
+                ? 'text-zinc-950/85 font-medium'
+                : 'text-white/90'
+            }`}
+          >
+            {card.tagline}
+          </p>
+
+          <div className="pt-2">
+            <span
+              className={`text-[11px] uppercase tracking-wider block mb-2 font-mono font-bold ${
+                card.isDarkText ? 'text-zinc-950/70' : 'text-white/75'
+              }`}
+            >
+              Core Capabilities
+            </span>
+            <div className="flex flex-wrap gap-2">
+              {card.deliverables.map((item, idx) => (
+                <span
+                  key={idx}
+                  className={`text-xs px-3 py-1 rounded-sm ${
+                    card.isDarkText
+                      ? 'bg-black/10 border border-black/20 text-zinc-950 font-semibold'
+                      : 'bg-white/15 border border-white/25 text-white font-medium'
+                  }`}
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Right Floating Dark Software Canvas */}
+        <div className="lg:col-span-7 w-full">
+          {renderMockup(card.id)}
+        </div>
+      </div>
+    </motion.div>
+  )
+}
+
+export function ScrollStack() {
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start start', 'end end'],
+  })
+
+  return (
+    <div
+      ref={containerRef}
+      className="relative w-full h-[220vh] sm:h-[260vh] lg:h-[300vh] mt-8 md:mt-12"
+    >
+      <div className="sticky top-0 w-full min-h-screen py-8 sm:py-10 flex flex-col justify-start">
+        <div className="relative w-full max-w-shell mx-auto px-4 sm:px-6 md:px-12 space-y-8">
+          {SERVICE_CARDS.map((card, index) => (
+            <StackCard
+              key={card.id}
+              card={card}
+              index={index}
+              total={SERVICE_CARDS.length}
+              progress={scrollYProgress}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default ScrollStack

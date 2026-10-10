@@ -1,31 +1,198 @@
-import { Geist, Geist_Mono, Noto_Sans, Playfair_Display } from "next/font/google"
-
+import type { Metadata, Viewport } from "next"
+import { Inter, Playfair_Display, Plus_Jakarta_Sans } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
+import { site } from "@/lib/site"
+import { HomePreloader } from "@/components/home-preloader"
+import { RoutePreloader } from "@/components/RoutePreloader"
+import { GlassNav } from "@/components/glass-nav"
+import { Footer } from "@/components/footer"
 
-const playfairDisplayHeading = Playfair_Display({subsets:['latin'],variable:'--font-heading'});
-
-const notoSans = Noto_Sans({subsets:['latin'],variable:'--font-sans'})
-
-const fontMono = Geist_Mono({
+/**
+ * Type contract.
+ * Display:  Neue Montreal (self-host to activate) -> Inter -> Helvetica Neue.
+ *           Never an extended or wide display face.
+ * Subheads: Ivyora Display (self-host to activate) -> Playfair Display.
+ * Body:     Inter.
+ *
+ * Syne, DM Serif Display and the render-blocking Google Fonts <link> are gone.
+ */
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-mono",
+  display: "swap",
+  variable: "--font-inter",
 })
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  display: "swap",
+  style: ["normal", "italic"],
+  variable: "--font-playfair",
+})
+
+/**
+ * Plus Jakarta Sans — scoped to the home page's Skills, Projects and
+ * Contact sections only. Exposed as a CSS variable; applied via the
+ * `font-jakarta` Tailwind utility. Never on <body>, never global.
+ */
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-plus-jakarta",
+})
+
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://sifatrahman.com"
+
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: site.meta.title,
+    template: "%s ■ Masabur Rahman Sifat",
+  },
+  description: site.meta.description,
+  applicationName: site.name,
+  authors: [{ name: "Masabur Rahman Sifat" }],
+  creator: "Masabur Rahman Sifat",
+  keywords: [
+    "Masabur Rahman Sifat",
+    "Frontend Engineer Bangladesh",
+    "UI/UX Designer",
+    "Creative Developer Portfolio",
+    "Next.js Developer",
+    "Tailwind CSS Specialist",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: site.meta.title,
+    description: site.meta.description,
+    type: "website",
+    siteName: site.name,
+    url: "/",
+    locale: "en_US",
+    images: [
+      {
+        url: "/og-default.png",
+        width: 1200,
+        height: 630,
+        alt: "Masabur Rahman Sifat — Creative Engineer & UI/UX Designer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: site.meta.title,
+    description: site.meta.description,
+    images: [
+      {
+        url: "/og-default.png",
+        alt: "Masabur Rahman Sifat — Creative Engineer & UI/UX Designer",
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
+}
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#ffffff",
+  colorScheme: "light",
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": `${SITE_URL}/#person`,
+        name: "Masabur Rahman Sifat",
+        alternateName: "Sifat",
+        url: SITE_URL,
+        image: `${SITE_URL}/hero-photo.png`,
+        jobTitle: "Creative Engineer & UI/UX Designer",
+        description: site.meta.description,
+        address: {
+          "@type": "PostalAddress",
+          addressCountry: "Bangladesh",
+        },
+        knowsAbout: [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Tailwind CSS",
+          "UI/UX Design",
+          "Design Systems",
+          "Frontend Architecture",
+        ],
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${SITE_URL}/#website`,
+        url: SITE_URL,
+        name: "Masabur Rahman Sifat ■ Portfolio",
+        description: "Editorial Portfolio & Creative Engineering by Masabur Rahman Sifat.",
+        publisher: {
+          "@id": `${SITE_URL}/#person`,
+        },
+      },
+    ],
+  }
+
   return (
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", notoSans.variable, playfairDisplayHeading.variable)}
+      className={cn("antialiased", inter.variable, playfair.variable, plusJakarta.variable)}
     >
-      <body>
-        <ThemeProvider>{children}</ThemeProvider>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
+      <body className="bg-paper font-body text-ink">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem={false}
+          disableTransitionOnChange
+        >
+          <a
+            href="#main"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-6 focus:left-6 focus:z-70 focus:bg-ink focus:px-5 focus:py-3 focus:text-xs focus:tracking-label focus:text-paper focus:uppercase"
+          >
+            Skip to content
+          </a>
+          <HomePreloader />
+          <RoutePreloader />
+          <GlassNav />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   )

@@ -1,0 +1,26 @@
+# Masabur Rahman Sifat
+
+> Creative Engineer & UI/UX Designer specializing in high-density frontend architecture, Next.js, Tailwind CSS, and bespoke dark-mode web systems.
+
+## Summary
+Masabur Rahman Sifat builds high-contrast, production-grade web applications and digital agency sites. Focus areas include custom UI design systems, anti-slop frontend standards, and smooth hardware-accelerated interfaces.
+
+## Primary Skills & Stack
+- **Frontend**: Next.js (App Router), React, TypeScript, Tailwind CSS, Framer Motion
+- **Design & UI**: UI/UX Design Systems, Glassmorphic Accents, Industrial & Obsidian Themes, WCAG Accessibility
+- **Tooling & Platforms**: VS Code, Git, Vercel, Netlify, Node.js
+
+## Featured Projects
+- [Nebula Digital Agency](https://sifatrahman.com/projects/nebula): Web platform with dynamic theme toggling, Formspree lead capture, interactive ROI calculator, and performance optimizations.
+- [Chorma Agency Site](https://sifatrahman.com/projects/chorma): Dark-mode interactive web showcase with custom loading overlays, orbital motion design, and magnetic cursor physics.
+- [Sparkle Clean](https://sifatrahman.com/projects/sparkle-clean-chandpur): Zero-dependency local cleaning service platform optimized for Chandpur, Bangladesh with direct WhatsApp booking.
+- [MoveMate Moving Planner](https://sifatrahman.com/projects/movemate-moving-planner): Interactive moving planner web app with checklist, cost estimator, timeline, and zero framework bloat.
+- [ContentForge](https://sifatrahman.com/projects/contentforge): Experimental AI content creation workspace for social media creators with hook, caption, and script generators.
+
+## Optional Deep Context
+- Full detailed project specs, technical breakdown, and articles: [llms-full.txt](https://sifatrahman.com/llms-full.txt)
+
+## Contact & Links
+- Website: [https://sifatrahman.com](https://sifatrahman.com)
+- GitHub: [https://github.com/sifat-rahman1](https://github.com/sifat-rahman1)
+- Email: [masabur.rahman.sifat@outlook.com](mailto:masabur.rahman.sifat@outlook.com)

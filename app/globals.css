@@ -1,129 +1,518 @@
 @import "tailwindcss";
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
 
-@custom-variant dark (&:is(.dark *));
-
-:root {
-    --background: oklch(1 0 0);
-    --foreground: oklch(0.147 0.004 49.3);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.147 0.004 49.3);
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.147 0.004 49.3);
-    --primary: oklch(0.214 0.009 43.1);
-    --primary-foreground: oklch(0.986 0.002 67.8);
-    --secondary: oklch(0.96 0.002 17.2);
-    --secondary-foreground: oklch(0.214 0.009 43.1);
-    --muted: oklch(0.96 0.002 17.2);
-    --muted-foreground: oklch(0.547 0.021 43.1);
-    --accent: oklch(0.96 0.002 17.2);
-    --accent-foreground: oklch(0.214 0.009 43.1);
-    --destructive: oklch(0.577 0.245 27.325);
-    --border: oklch(0.922 0.005 34.3);
-    --input: oklch(0.922 0.005 34.3);
-    --ring: oklch(0.714 0.014 41.2);
-    --chart-1: oklch(0.868 0.007 39.5);
-    --chart-2: oklch(0.547 0.021 43.1);
-    --chart-3: oklch(0.438 0.017 39.3);
-    --chart-4: oklch(0.367 0.016 35.7);
-    --chart-5: oklch(0.268 0.011 36.5);
-    --radius: 0.625rem;
-    --sidebar: oklch(0.986 0.002 67.8);
-    --sidebar-foreground: oklch(0.147 0.004 49.3);
-    --sidebar-primary: oklch(0.214 0.009 43.1);
-    --sidebar-primary-foreground: oklch(0.986 0.002 67.8);
-    --sidebar-accent: oklch(0.96 0.002 17.2);
-    --sidebar-accent-foreground: oklch(0.214 0.009 43.1);
-    --sidebar-border: oklch(0.922 0.005 34.3);
-    --sidebar-ring: oklch(0.714 0.014 41.2);
-}
-
-.dark {
-    --background: oklch(0.147 0.004 49.3);
-    --foreground: oklch(0.986 0.002 67.8);
-    --card: oklch(0.214 0.009 43.1);
-    --card-foreground: oklch(0.986 0.002 67.8);
-    --popover: oklch(0.214 0.009 43.1);
-    --popover-foreground: oklch(0.986 0.002 67.8);
-    --primary: oklch(0.922 0.005 34.3);
-    --primary-foreground: oklch(0.214 0.009 43.1);
-    --secondary: oklch(0.268 0.011 36.5);
-    --secondary-foreground: oklch(0.986 0.002 67.8);
-    --muted: oklch(0.268 0.011 36.5);
-    --muted-foreground: oklch(0.714 0.014 41.2);
-    --accent: oklch(0.268 0.011 36.5);
-    --accent-foreground: oklch(0.986 0.002 67.8);
-    --destructive: oklch(0.704 0.191 22.216);
-    --border: oklch(1 0 0 / 10%);
-    --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.547 0.021 43.1);
-    --chart-1: oklch(0.868 0.007 39.5);
-    --chart-2: oklch(0.547 0.021 43.1);
-    --chart-3: oklch(0.438 0.017 39.3);
-    --chart-4: oklch(0.367 0.016 35.7);
-    --chart-5: oklch(0.268 0.011 36.5);
-    --sidebar: oklch(0.214 0.009 43.1);
-    --sidebar-foreground: oklch(0.986 0.002 67.8);
-    --sidebar-primary: oklch(0.488 0.243 264.376);
-    --sidebar-primary-foreground: oklch(0.986 0.002 67.8);
-    --sidebar-accent: oklch(0.268 0.011 36.5);
-    --sidebar-accent-foreground: oklch(0.986 0.002 67.8);
-    --sidebar-border: oklch(1 0 0 / 10%);
-    --sidebar-ring: oklch(0.547 0.021 43.1);
+/**
+ * Roba wordmark face, scoped to the site wordmark only. Roba is licensed for
+ * personal use, not commercial client work — see DESIGN.md "Roba wordmark
+ * (header only)". Self-hosted woff with font-display: swap so the SIFAT logo
+ * paints in the fallback stack first and swaps when the face arrives.
+ */
+@font-face {
+  font-family: "Roba";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/Roba.woff") format("woff");
 }
 
 @theme inline {
-    --font-sans: var(--font-sans);
-    --font-heading: var(--font-heading);
-    --color-sidebar-ring: var(--sidebar-ring);
-    --color-sidebar-border: var(--sidebar-border);
-    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-    --color-sidebar-accent: var(--sidebar-accent);
-    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-    --color-sidebar-primary: var(--sidebar-primary);
-    --color-sidebar-foreground: var(--sidebar-foreground);
-    --color-sidebar: var(--sidebar);
-    --color-chart-5: var(--chart-5);
-    --color-chart-4: var(--chart-4);
-    --color-chart-3: var(--chart-3);
-    --color-chart-2: var(--chart-2);
-    --color-chart-1: var(--chart-1);
-    --color-ring: var(--ring);
-    --color-input: var(--input);
-    --color-border: var(--border);
-    --color-destructive: var(--destructive);
-    --color-accent-foreground: var(--accent-foreground);
-    --color-accent: var(--accent);
-    --color-muted-foreground: var(--muted-foreground);
-    --color-muted: var(--muted);
-    --color-secondary-foreground: var(--secondary-foreground);
-    --color-secondary: var(--secondary);
-    --color-primary-foreground: var(--primary-foreground);
-    --color-primary: var(--primary);
-    --color-popover-foreground: var(--popover-foreground);
-    --color-popover: var(--popover);
-    --color-card-foreground: var(--card-foreground);
-    --color-card: var(--card);
-    --color-foreground: var(--foreground);
-    --color-background: var(--background);
-    --radius-sm: calc(var(--radius) * 0.6);
-    --radius-md: calc(var(--radius) * 0.8);
-    --radius-lg: var(--radius);
-    --radius-xl: calc(var(--radius) * 1.4);
-    --radius-2xl: calc(var(--radius) * 1.8);
-    --radius-3xl: calc(var(--radius) * 2.2);
-    --radius-4xl: calc(var(--radius) * 2.6);
+  --color-paper: #ffffff;
+  --color-bone: #fafaf8;
+  --color-ink: #1a1a1a;
+  --color-muted: #6f6f6f;
+  --color-rule: rgb(26 26 26 / 0.1);
+  --color-rule-strong: rgb(26 26 26 / 0.22);
+  --font-display:
+    "Neue Montreal", var(--font-inter), "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  --font-serif:
+    "Ivyora Display", var(--font-playfair), "Playfair Display", Georgia, serif;
+  --font-body:
+    var(--font-inter), "Neue Montreal", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  /**
+   * Wordmark only: the SIFAT logo in the header. Roba 400 is the single
+   * weight the face ships, so nothing else may reference this stack.
+   */
+  --font-wordmark: "Roba", "Space Grotesk", system-ui, sans-serif;
+  /**
+   * Plus Jakarta Sans, scoped to the home page's Skills / Work / Contact
+   * sections via the `font-jakarta` utility. Never global, never replaces
+   * --font-body or --font-display.
+   */
+  --font-jakarta: var(--font-plus-jakarta), "Plus Jakarta Sans", system-ui,
+    sans-serif;
+
+  --tracking-display: -0.04em;
+  --tracking-tightish: -0.02em;
+  --tracking-label: 0.16em;
+
+  /**
+   * Unified 4-step border-radius scale. Every rounded utility in the
+   * codebase resolves to one of 6px (sm), 12px (md), 24px (lg) or
+   * 9999px (full); xl/2xl/3xl aliases exist only as a safety net so a
+   * missed class can never render an off-scale value.
+   *  sm   (6px):  tags, badges, kbd chips, checkboxes, small icon boxes
+   *  md  (12px):  buttons, cards, inputs, dropdowns, panels
+   *  lg  (24px):  preview cards, modals, large frames, sticky panels
+   *  full:        pills, avatars, dots, toggle knobs
+   */
+  --radius-xs: 6px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 24px;
+  --radius-xl: 12px;
+  --radius-2xl: 12px;
+  --radius-3xl: 24px;
+
+  --container-shell: 1680px;
+
+  --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --animate-rise-in: rise-in 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes rise-in {
+  from {
+    transform: translateY(18px);
+  }
+  to {
+    transform: none;
+  }
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-    }
-  body {
-    @apply bg-background text-foreground;
-    }
+  :root {
+    color-scheme: light;
+  }
   html {
-    @apply font-sans;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  section[id] {
+    scroll-margin-top: 4.5rem;
+  }
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  ::selection {
+    background-color: var(--color-ink);
+    color: var(--color-paper);
+  }
+  :focus-visible {
+    outline: 1px solid var(--color-ink);
+    outline-offset: 3px;
+  }
+}
+
+/**
+ * Plus Jakarta Sans scope — home page sections only. `font-jakarta` on the
+ * section root re-types every descendant through inheritance, including
+ * elements that carry `font-display` / `font-serif` / `font-mono`
+ * utilities (those set font-family on the element itself, which would
+ * otherwise win over inheritance).
+ *
+ * Deliberately UNLAYERED: Tailwind v4 emits font utilities in
+ * `@layer utilities`, and a later cascade layer beats an earlier one no
+ * matter the specificity — so a `@layer components` override would
+ * silently lose. Unlayered author CSS beats all layered CSS. No other
+ * page or component uses this class.
+ */
+.font-jakarta,
+.font-jakarta :is(.font-display, .font-serif, .font-mono) {
+  font-family:
+    var(--font-plus-jakarta), "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+/* ─── Fixed Button Styling (Scoped from Global) ─── */
+.btn-hero-custom {
+  width: 150px;
+  height: 60px;
+  border: 3px solid #010208;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background: white;
+  font-size: 1.2em;
+  font-weight: 550;
+  color: #010208;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-hero-custom:hover {
+  background: #010208;
+  color: white;
+}
+
+/* ─── Glass Grain Wrapper (Fixed SVG & Visibility) ─── */
+.glass-grain-wrapper {
+  position: relative;
+  isolation: isolate;
+}
+.glass-grain-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .glass-grain-wrapper::before {
+    display: none;
+  }
+}
+
+/* ─── Glass Navigation ─── */
+.nav-cta-btn {
+  background: #ffffff !important;
+  color: #010208 !important;
+}
+.nav-cta-btn:hover {
+  background: #e2e8f0 !important;
+  color: #010208 !important;
+}
+
+/* ─── Editorial Component Helpers ───────────────────────────── */
+@layer components {
+  .label {
+    font-size: 0.6875rem;
+    line-height: 1.1;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  @media (min-width: 768px) {
+    .label {
+      font-size: 0.75rem;
     }
+  }
+  .rule-b {
+    border-bottom: 1px solid var(--color-rule);
+  }
+  .rule-t {
+    border-top: 1px solid var(--color-rule);
+  }
+  .row-plate {
+    display: none;
+  }
+  @media (hover: none), (prefers-reduced-motion: reduce) {
+    .row-plate {
+      display: block;
+    }
+  }
+  .field {
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid var(--color-rule);
+    border-radius: 0;
+    padding: 0.9rem 0;
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-ink);
+    transition: border-color 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .field::placeholder {
+    color: rgb(26 26 26 / 0.32);
+  }
+  .field:focus,
+  .field:focus-visible {
+    outline: none;
+    border-bottom-color: var(--color-ink);
+  }
+  textarea.field {
+    resize: none;
+  }
+  .link-rule {
+    position: relative;
+  }
+  .link-rule::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -0.35rem;
+    left: 0;
+    height: 1px;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 320ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .link-rule:hover::after,
+  .link-rule:focus-visible::after {
+    transform: scaleX(1);
+  }
+}
+
+.field:-webkit-autofill,
+.field:-webkit-autofill:hover,
+.field:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--color-ink);
+  box-shadow: 0 0 0 1000px var(--color-paper) inset;
+  transition: background-color 9999s ease-out 0s;
+}
+@media (max-width: 767px) {
+  .field {
+    font-size: 16px;
+  }
+}
+
+/* ─── GooeyNav Component CSS (Exact Spec) ───────────────────── */
+:root {
+  --linear-ease: linear(
+    0,
+    0.068,
+    0.19 2.7%,
+    0.804 8.1%,
+    1.037,
+    1.199 13.2%,
+    1.245,
+    1.27 15.8%,
+    1.274,
+    1.272 17.4%,
+    1.249 19.1%,
+    0.996 28%,
+    0.949,
+    0.928 33.3%,
+    0.926,
+    0.933 36.8%,
+    1.001 45.6%,
+    1.013,
+    1.019 50.8%,
+    1.018 54.4%,
+    1 63.1%,
+    0.995 68%,
+    1.001 85%,
+    1
+  );
+}
+
+.gooey-nav-container {
+  position: relative;
+}
+
+.gooey-nav-container nav {
+  display: flex;
+  position: relative;
+  transform: translate3d(0, 0, 0.01px);
+}
+
+.gooey-nav-container nav ul {
+  display: flex;
+  gap: 2em;
+  list-style: none;
+  padding: 0 1em;
+  margin: 0;
+  position: relative;
+  z-index: 3;
+  color: white;
+  text-shadow: 0 1px 1px hsl(205deg 30% 10% / 0.2);
+}
+
+.gooey-nav-container nav ul li {
+  border-radius: 100vw;
+  position: relative;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 0 0.5px 1.5px transparent;
+  color: white;
+}
+
+.gooey-nav-container nav ul li a {
+  display: inline-block;
+  padding: 0.6em 1em;
+}
+
+.gooey-nav-container nav ul li:focus-within:has(:focus-visible) {
+  box-shadow: 0 0 0.5px 1.5px white;
+}
+
+.gooey-nav-container nav ul li::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: white;
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+.gooey-nav-container nav ul li.active {
+  color: black;
+  text-shadow: none;
+}
+
+.gooey-nav-container nav ul li.active::after {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.gooey-nav-container .effect {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  opacity: 1;
+  pointer-events: none;
+  display: grid;
+  place-items: center;
+  z-index: 1;
+}
+
+.gooey-nav-container .effect.text {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.gooey-nav-container .effect.text.active {
+  color: black;
+}
+
+.gooey-nav-container .effect.filter {
+  filter: blur(4px) contrast(20);
+  mix-blend-mode: lighten;
+  pointer-events: none;
+}
+
+.gooey-nav-container .effect.filter::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: transparent;
+  border-radius: 9999px;
+}
+
+.gooey-nav-container .effect.filter::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: white;
+  transform: scale(0);
+  opacity: 0;
+  z-index: -1;
+  border-radius: 100vw;
+}
+
+.gooey-nav-container .effect.active::after {
+  animation: pill 0.3s ease both;
+}
+
+@keyframes pill {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.particle,
+.point {
+  display: block;
+  opacity: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  transform-origin: center;
+}
+
+.particle {
+  --time: 5s;
+  position: absolute;
+  top: calc(50% - 8px);
+  left: calc(50% - 8px);
+  animation: particle calc(var(--time)) ease 1 -350ms;
+}
+
+.point {
+  background: var(--color);
+  opacity: 1;
+  animation: point calc(var(--time)) ease 1 -350ms;
+}
+
+@keyframes particle {
+  0% {
+    transform: rotate(0deg)
+      translate(calc(var(--start-x)), calc(var(--start-y)));
+    opacity: 1;
+    animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+  }
+
+  70% {
+    transform: rotate(calc(var(--rotate) * 0.5))
+      translate(calc(var(--end-x) * 1.2), calc(var(--end-y) * 1.2));
+    opacity: 1;
+    animation-timing-function: ease;
+  }
+
+  85% {
+    transform: rotate(calc(var(--rotate) * 0.66))
+      translate(calc(var(--end-x)), calc(var(--end-y)));
+    opacity: 1;
+  }
+
+  100% {
+    transform: rotate(calc(var(--rotate) * 1.2))
+      translate(calc(var(--end-x) * 0.5), calc(var(--end-y) * 0.5));
+    opacity: 1;
+  }
+}
+
+@keyframes point {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+  }
+
+  25% {
+    transform: scale(calc(var(--scale) * 0.25));
+  }
+
+  38% {
+    opacity: 1;
+  }
+
+  65% {
+    transform: scale(var(--scale));
+    opacity: 1;
+    animation-timing-function: ease;
+  }
+
+  85% {
+    transform: scale(var(--scale));
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
 }

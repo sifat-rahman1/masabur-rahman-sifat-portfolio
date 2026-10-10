@@ -1,0 +1,59 @@
+# Masabur Rahman Sifat — Complete Portfolio Context
+
+## Overview
+Masabur Rahman Sifat is a Creative Engineer and UI/UX Designer based in Bangladesh (UTC+6). He crafts bespoke, performance-focused web applications with an emphasis on clean code, anti-slop design principles, strict typography hierarchy, and zero template bloat.
+
+---
+
+## Capabilities & Services
+
+### 1. High-Density Frontend Engineering
+- Bespoke Next.js App Router setup with static pre-rendering, type-safe APIs, and server components.
+- Responsive, fluid typography and layout design using Tailwind CSS.
+- Smooth animations and interaction micro-details using Framer Motion (spring physics, LazyMotion, transform-only GPU acceleration).
+
+### 2. UI/UX Design Systems
+- Dark-mode obsidian visual direction (#08080A background bases, high contrast, clean borders).
+- Custom component libraries, glassmorphic accents, orbital loaders, and magnetic cursor interactions.
+- WCAG compliance (AA & AAA contrast ratios), keyboard navigation accessibility, and clean semantic DOM structures.
+
+### 3. AI-Native Rapid Scaffolding
+- AI-assisted scaffolding and rapid execution paired with strict human visual judgment.
+- Production-ready applications shipped without kit templates or generic AI slop.
+
+---
+
+## Full Case Study Registry
+
+### 1. Nebula Digital Agency
+- **URL**: [https://sifatrahman.com/projects/nebula](https://sifatrahman.com/projects/nebula)
+- **Stack**: Next.js, Tailwind CSS, Formspree API, Vercel
+- **Description**: High-converting digital agency platform built with high-contrast obsidian aesthetic, custom theme toggle, interactive ROI calculator, AJAX lead capture, and zero layout shift. 100/100 Lighthouse performance metrics.
+
+### 2. Chorma Agency Site
+- **URL**: [https://sifatrahman.com/projects/chorma](https://sifatrahman.com/projects/chorma)
+- **Stack**: Next.js App Router, Tailwind CSS, Framer Motion, Netlify
+- **Description**: Performance-focused agency platform from Chandpur, BD featuring magnetic GPU hover physics, transform-only orbital loaders, WCAG AAA dark/light theme switching, and <12KB purged CSS.
+
+### 3. Sparkle Clean Chandpur
+- **URL**: [https://sifatrahman.com/projects/sparkle-clean-chandpur](https://sifatrahman.com/projects/sparkle-clean-chandpur)
+- **Stack**: HTML5, Vanilla CSS3, Modular JS (Zero External Runtime Dependencies)
+- **Description**: Ultra-fast single-page local cleaning service web app (~75 KB total weight) built for instant loading on mobile 3G/4G networks in Chandpur, Bangladesh with direct pre-filled WhatsApp booking flow and LocalBusiness JSON-LD schema.
+
+### 4. MoveMate — Moving Planner Web App
+- **URL**: [https://sifatrahman.com/projects/movemate-moving-planner](https://sifatrahman.com/projects/movemate-moving-planner)
+- **Stack**: HTML, CSS, JavaScript, Devin AI
+- **Description**: Structured, calm moving planner web application featuring interactive task checklist, room-by-room inventory tracker, live cost estimator, moving timeline, and responsive zero-bloat architecture.
+
+### 5. ContentForge — AI Content Workspace
+- **URL**: [https://sifatrahman.com/projects/contentforge](https://sifatrahman.com/projects/contentforge)
+- **Stack**: React, Tailwind CSS, LocalStorage
+- **Description**: Experimental AI content workspace for digital creators to generate social media content ideas, hooks, captions, scripts, and plan publishing schedules on one focused surface.
+
+---
+
+## Contact & Social Links
+- Portfolio: [https://sifatrahman.com](https://sifatrahman.com)
+- GitHub: [https://github.com/sifat-rahman1](https://github.com/sifat-rahman1)
+- Email: [masabur.rahman.sifat@outlook.com](mailto:masabur.rahman.sifat@outlook.com)
+- Contact: [https://sifatrahman.com/#contact](https://sifatrahman.com/#contact)

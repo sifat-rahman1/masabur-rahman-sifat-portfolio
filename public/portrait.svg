@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" width="900" height="1200" role="img" aria-label="Abstract portrait placeholder, three by four">
+  <title>Portrait placeholder</title>
+  <defs>
+    <linearGradient id="ground" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#fbfbf9"/>
+      <stop offset="1" stop-color="#eeece9"/>
+    </linearGradient>
+    <radialGradient id="wash" cx="0.7" cy="0.76" r="0.82">
+      <stop offset="0" stop-color="#1a1a1a" stop-opacity="0.82"/>
+      <stop offset="0.5" stop-color="#1a1a1a" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#1a1a1a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="light" cx="0.18" cy="0.1" r="0.72">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="tint" x1="0" y1="0" x2="1" y2="0.6">
+      <stop offset="0" stop-color="#1a1a1a" stop-opacity="0"/>
+      <stop offset="1" stop-color="#1a1a1a" stop-opacity="0.08"/>
+    </linearGradient>
+    <pattern id="rules" width="900" height="12" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0.5" x2="900" y2="0.5" stroke="#1a1a1a" stroke-opacity="0.05"/>
+    </pattern>
+  </defs>
+
+  <rect width="900" height="1200" fill="url(#ground)"/>
+  <rect width="900" height="1200" fill="url(#rules)"/>
+  <rect width="900" height="1200" fill="url(#wash)"/>
+  <rect width="900" height="1200" fill="url(#light)"/>
+  <rect width="900" height="1200" fill="url(#tint)"/>
+
+  <g stroke="#fbfbf9" stroke-opacity="0.5" stroke-width="1" fill="none">
+    <path d="M120 1092c0-260 148-430 330-430s330 170 330 430"/>
+    <path d="M180 1092c0-215 122-355 270-355s270 140 270 355"/>
+  </g>
+
+  <rect x="120" y="180" width="660" height="840" fill="none" stroke="#1a1a1a" stroke-opacity="0.16"/>
+
+  <g stroke="#1a1a1a" stroke-opacity="0.24" stroke-width="1">
+    <path d="M32 54V32h22"/>
+    <path d="M868 54V32h-22"/>
+    <path d="M32 1146v22h22"/>
+    <path d="M868 1146v22h-22"/>
+  </g>
+
+  <rect x="0.5" y="0.5" width="899" height="1199" fill="none" stroke="#1a1a1a" stroke-opacity="0.1"/>
+</svg>
+
