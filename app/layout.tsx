@@ -160,6 +160,41 @@ export default function RootLayout({
           "@id": `${SITE_URL}/#person`,
         },
       },
+      {
+        "@type": "WebPage",
+        "@id": `${SITE_URL}/#homepage`,
+        url: SITE_URL,
+        name: site.meta.title,
+        description: site.meta.description,
+        isPartOf: {
+          "@id": `${SITE_URL}/#website`,
+        },
+        about: {
+          "@id": `${SITE_URL}/#person`,
+        },
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${SITE_URL}/#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "What technologies do you use for development?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "I primarily build web applications using Next.js App Router, Tailwind CSS, TypeScript, and modern frontend design systems.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Are you available for freelance projects?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes, I am available for custom web development, UI/UX design, and digital agency collaborations. You can reach out via the contact page.",
+            },
+          },
+        ],
+      },
     ],
   }
 

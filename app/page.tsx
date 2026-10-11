@@ -6,6 +6,7 @@ import { Work } from "@/components/work"
 import { Services } from "@/components/services"
 import { About } from "@/components/about"
 import { EducationTimeline } from "@/components/education-timeline"
+import { HomeFaq } from "@/components/home-faq"
 import { MainCTA } from "@/components/contact-cta"
 
 export default function Page() {
@@ -18,6 +19,7 @@ export default function Page() {
         <Services />
         <About />
         <EducationTimeline />
+        <HomeFaq />
         <MainCTA />
       </main>
     </div>

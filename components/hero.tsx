@@ -63,6 +63,14 @@ export function Hero() {
             {headlineTail}
           </h1>
 
+          {/* AI extraction summary: screen-reader and crawler accessible,
+              visually hidden to preserve the hero design. */}
+          <p className="sr-only">
+            I am Masabur Rahman Sifat, a frontend engineer and UI/UX designer
+            specializing in high-performance Next.js web applications, bespoke
+            design systems, and modern digital products.
+          </p>
+
           <p className="mt-7 max-w-[44ch] animate-rise-in text-[1.0625rem] leading-[1.7] text-neutral-700 [animation-delay:180ms] md:text-lg">
             {hero.subline}
           </p>
