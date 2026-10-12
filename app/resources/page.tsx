@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.jpg?v=3",
         width: 1200,
         height: 630,
         alt: "Free web development & design resources",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: "Resources",
     description:
       "Free resources for web developers and designers: UI kits, icon sets, type foundries, stock assets and hosting.",
-    images: ["/og-image.png"],
+    images: ["/og-image.jpg?v=3"],
   },
 }
 

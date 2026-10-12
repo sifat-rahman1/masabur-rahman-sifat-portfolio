@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.jpg?v=3",
         width: 1200,
         height: 630,
         alt: "Sifat's tools & tech stack",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: "Tools",
     description:
       "The tools and stack Sifat builds with, grouped by the job each piece does.",
-    images: ["/og-image.png"],
+    images: ["/og-image.jpg?v=3"],
   },
 }
 

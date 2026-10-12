@@ -46,7 +46,7 @@ const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || "https://masabur-sifat.vercel.app"
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
+  metadataBase: new URL("https://masabur-sifat.vercel.app"),
   title: {
     default: site.meta.title,
     template: "%s | Masabur Rahman Sifat",
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "https://masabur-sifat.vercel.app/og-image.jpg?v=3",
         width: 1200,
         height: 630,
         alt: "Masabur Rahman Sifat — Creative Engineer & UI/UX Designer",
@@ -88,7 +88,7 @@ export const metadata: Metadata = {
     description: site.meta.description,
     images: [
       {
-        url: "/og-image.jpg",
+        url: "https://masabur-sifat.vercel.app/og-image.jpg?v=3",
         alt: "Masabur Rahman Sifat — Creative Engineer & UI/UX Designer",
       },
     ],

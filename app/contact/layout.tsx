@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.jpg?v=3",
         width: 1200,
         height: 630,
         alt: "Masabur Rahman Sifat — Contact",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     title: "Contact",
     description:
       "Start a project with Sifat — brief form, email, and 24-hour reply.",
-    images: ["/og-image.png"],
+    images: ["/og-image.jpg?v=3"],
   },
 }
 
