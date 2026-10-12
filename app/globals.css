@@ -84,6 +84,10 @@
   :root {
     color-scheme: light;
   }
+  html,
+  body {
+    overflow-x: clip;
+  }
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;

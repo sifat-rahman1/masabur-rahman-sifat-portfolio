@@ -32,14 +32,14 @@ export function Hero() {
         />
       </div>
 
-      {/* HERO PHOTO CONTAINER */}
-      <div className="absolute bottom-0 right-0 z-10 pointer-events-none flex items-end justify-end h-full w-full lg:w-1/2">
+      {/* HERO PHOTO CONTAINER: stacked flow on mobile, absolute split on desktop */}
+      <div className="pointer-events-none relative order-2 flex h-[46svh] w-full items-end justify-center lg:absolute lg:bottom-0 lg:right-0 lg:z-10 lg:h-full lg:w-1/2 lg:justify-end">
         <img
           src="/hero-photo.png"
           alt="Masabur Rahman Sifat — Creative Engineer & UI/UX Designer"
           fetchPriority="high"
           decoding="async"
-          className="h-[80vh] sm:h-[86vh] lg:h-[92vh] w-auto max-w-none object-contain object-bottom select-none filter drop-shadow-2xl animate-rise-in [animation-delay:360ms] origin-bottom scale-105 sm:scale-115 lg:scale-125 translate-x-20 sm:translate-x-32 lg:translate-x-44 xl:translate-x-52"
+          className="h-full w-full object-contain object-bottom select-none filter drop-shadow-2xl animate-rise-in [animation-delay:360ms] origin-bottom scale-105 sm:scale-115 lg:h-[92vh] lg:w-auto lg:max-w-none lg:scale-125 lg:translate-x-44 xl:translate-x-52"
         />
 
         {/* Rotating Circular Text Badge over the shoulder/chest area */}
@@ -52,7 +52,7 @@ export function Hero() {
       </div>
 
       {/* TEXT CONTENT LAYER */}
-      <div className="relative z-20 mx-auto w-full max-w-shell px-6 md:px-12 pb-16 md:pb-20 pt-[6rem]">
+      <div className="relative z-20 order-1 mx-auto w-full max-w-shell px-4 sm:px-6 md:px-12 pb-16 md:pb-20 pt-[6rem]">
         <div className="max-w-[440px] sm:max-w-[480px] lg:max-w-[520px]">
           <h1
             id="hero-heading"

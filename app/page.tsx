@@ -11,10 +11,10 @@ import { MainCTA } from "@/components/contact-cta"
 
 export default function Page() {
   return (
-    <div className="site-container">
+    <div className="site-container w-full max-w-full overflow-x-clip">
       <Hero />
       <LogoMarquee />
-      <main id="main" className="glass-grain-wrapper">
+      <main id="main" className="glass-grain-wrapper w-full max-w-full overflow-x-clip">
         <Work />
         <Services />
         <About />

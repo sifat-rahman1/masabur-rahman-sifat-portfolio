@@ -95,6 +95,15 @@ function StackCard({ card, index, total, progress }: StackCardProps) {
   const cardStart = index * step
   const nextCardStart = (index + 1) * step
 
+  // Desktop-only sticky offsets: static classes keep Tailwind JIT picking
+  // each variant up. Mobile stays in normal flow (relative, no offset).
+  const stickyTops = [
+    "md:top-[calc(13vh+0px)]",
+    "md:top-[calc(13vh+16px)]",
+    "md:top-[calc(13vh+32px)]",
+    "md:top-[calc(13vh+48px)]",
+  ] as const
+
   const scale = useTransform(
     progress,
     [cardStart, nextCardStart],
@@ -114,9 +123,8 @@ function StackCard({ card, index, total, progress }: StackCardProps) {
       style={{
         scale,
         filter,
-        top: `calc(13vh + ${index * 16}px)`,
       }}
-      className={`sticky w-full rounded-sm p-6 sm:p-8 md:p-10 ${card.bgColor} ${card.borderAccent} border shadow-[0_25px_60px_rgba(0,0,0,0.35)] ${
+      className={`relative w-full rounded-sm p-6 sm:p-8 md:p-10 md:sticky ${stickyTops[index] ?? "md:top-[13vh]"} ${card.bgColor} ${card.borderAccent} border shadow-[0_25px_60px_rgba(0,0,0,0.35)] ${
         card.isDarkText ? 'text-zinc-950' : 'text-white'
       } transform-gpu will-change-transform overflow-hidden`}
     >
@@ -205,9 +213,9 @@ export function ScrollStack() {
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-[220vh] sm:h-[260vh] lg:h-[300vh] mt-8 md:mt-12"
+      className="relative mt-8 h-auto w-full sm:h-[260vh] md:mt-12 lg:h-[300vh]"
     >
-      <div className="sticky top-0 w-full min-h-screen py-8 sm:py-10 flex flex-col justify-start">
+      <div className="relative top-0 flex w-full flex-col justify-start py-8 sm:py-10 md:sticky md:min-h-screen">
         <div className="relative w-full max-w-shell mx-auto px-4 sm:px-6 md:px-12 space-y-8">
           {SERVICE_CARDS.map((card, index) => (
             <StackCard
