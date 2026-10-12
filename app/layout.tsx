@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Masabur Rahman Sifat — Creative Engineer & UI/UX Designer",
@@ -88,7 +88,7 @@ export const metadata: Metadata = {
     description: site.meta.description,
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.jpg",
         alt: "Masabur Rahman Sifat — Creative Engineer & UI/UX Designer",
       },
     ],
@@ -166,6 +166,7 @@ export default function RootLayout({
         url: SITE_URL,
         name: site.meta.title,
         description: site.meta.description,
+        dateModified: new Date().toISOString(),
         isPartOf: {
           "@id": `${SITE_URL}/#website`,
         },
