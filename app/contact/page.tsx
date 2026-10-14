@@ -29,32 +29,54 @@ export default function ContactPage() {
     setTimeout(() => setCopied(false), 2000)
   }
 
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xzedjrld'
+
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
     const form = event.currentTarget
     const data = new FormData(form)
+    const name = String(data.get('name') ?? '').trim()
+    const email = String(data.get('email') ?? '').trim()
+    const subject = String(data.get('subject') ?? '').trim()
+    const message = String(data.get('message') ?? '').trim()
     setStatus({ state: 'sending' })
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
         body: JSON.stringify({
-          name: String(data.get('name') ?? ''),
-          email: String(data.get('email') ?? ''),
-          brief: `${String(data.get('brief') ?? '')}\n\nBudget: ${budget}`,
+          name,
+          email,
+          _replyto: email,
+          subject: subject || `New project inquiry from ${name || 'your portfolio'}`,
+          _subject: subject || `New project inquiry from ${name || 'your portfolio'}`,
+          message: `${message}\n\nBudget: ${budget}`,
+          budget,
         }),
       })
       if (!response.ok) {
         const payload = (await response.json().catch(() => ({}))) as {
           error?: string
+          errors?: Array<{ message?: string }>
         }
+        const formspreeError = payload.errors
+          ?.map((entry) => entry.message)
+          .filter(Boolean)
+          .join(' ')
         setStatus({
           state: 'error',
-          message: payload.error ?? 'That didn’t send. Please try again.',
+          message:
+            payload.error ??
+            formspreeError ??
+            'That didn’t send. Please try again.',
         })
         return
       }
       form.reset()
+      setBudget('$1k – $3k')
       setStatus({ state: 'sent' })
     } catch {
       setStatus({
@@ -188,17 +210,37 @@ export default function ContactPage() {
                 />
               </div>
 
-              {/* Field 03: Project Details */}
+              {/* Field 03: Subject */}
               <div className="flex flex-col space-y-2">
                 <label
-                  htmlFor="contact-brief"
+                  htmlFor="contact-subject"
+                  className="font-sans text-xs font-medium tracking-widest text-neutral-500 uppercase"
+                >
+                  Subject
+                </label>
+                <input
+                  id="contact-subject"
+                  name="subject"
+                  type="text"
+                  required
+                  autoComplete="off"
+                  maxLength={150}
+                  placeholder="Website redesign, landing page, design system…"
+                  className="w-full rounded-xl border border-neutral-200 bg-neutral-50/50 px-4 py-3.5 text-sm text-neutral-900 transition-all placeholder:text-neutral-400 focus:border-neutral-900 focus:bg-white focus:outline-none"
+                />
+              </div>
+
+              {/* Field 04: Project Details */}
+              <div className="flex flex-col space-y-2">
+                <label
+                  htmlFor="contact-message"
                   className="font-sans text-xs font-medium tracking-widest text-neutral-500 uppercase"
                 >
                   Project Details
                 </label>
                 <textarea
-                  id="contact-brief"
-                  name="brief"
+                  id="contact-message"
+                  name="message"
                   rows={4}
                   required
                   maxLength={5000}
@@ -207,7 +249,7 @@ export default function ContactPage() {
                 />
               </div>
 
-              {/* Field 04: Budget Selector */}
+              {/* Field 05: Budget Selector */}
               <div className="flex flex-col space-y-3 pt-2">
                 <span
                   id="budget-label"
@@ -243,8 +285,31 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={sending}
+                  aria-disabled={sending}
                   className="group inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-neutral-900 px-8 py-4 text-base font-medium text-white transition-all duration-300 hover:scale-[1.01] hover:bg-black hover:shadow-md active:scale-95 disabled:cursor-not-allowed disabled:opacity-60"
                 >
+                  {sending && (
+                    <svg
+                      className="h-4 w-4 animate-spin"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth={4}
+                      />
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                      />
+                    </svg>
+                  )}
                   <span>{sending ? 'Sending…' : 'Send Message'}</span>
                   <svg
                     className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
@@ -261,15 +326,50 @@ export default function ContactPage() {
                     />
                   </svg>
                 </button>
-                <p
-                  role="status"
-                  aria-live="polite"
-                  className="mt-3 text-center text-xs font-medium text-neutral-500"
-                >
-                  {status.state === 'sent' &&
-                    'Message received. I’ll reply within 24 hours.'}
-                  {status.state === 'error' && status.message}
-                </p>
+                {status.state === 'sent' && (
+                  <div
+                    role="status"
+                    aria-live="polite"
+                    className="mt-4 animate-[fadeSlideIn_0.4s_ease-out] rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3.5 text-center"
+                  >
+                    <p className="text-sm font-semibold text-emerald-800">
+                      Thank you! Your message has been received.
+                    </p>
+                    <p className="mt-1 text-xs text-emerald-700">
+                      I will get back to you shortly — usually within 24
+                      hours.
+                    </p>
+                  </div>
+                )}
+                {status.state === 'error' && (
+                  <div
+                    role="alert"
+                    className="mt-4 animate-[fadeSlideIn_0.4s_ease-out] rounded-xl border border-red-200 bg-red-50 px-4 py-3.5 text-center text-sm font-medium text-red-700"
+                  >
+                    {status.message}
+                  </div>
+                )}
+                {status.state !== 'sent' && status.state !== 'error' && (
+                  <p
+                    role="status"
+                    aria-live="polite"
+                    className="mt-3 text-center text-xs font-medium text-neutral-500"
+                  >
+                    {sending ? 'Sending your message…' : ''}
+                  </p>
+                )}
+                <style jsx>{`
+                  @keyframes fadeSlideIn {
+                    from {
+                      opacity: 0;
+                      transform: translateY(6px);
+                    }
+                    to {
+                      opacity: 1;
+                      transform: translateY(0);
+                    }
+                  }
+                `}</style>
               </div>
             </form>
           </div>
