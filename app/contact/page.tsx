@@ -39,6 +39,7 @@ export default function ContactPage() {
     const email = String(data.get('email') ?? '').trim()
     const subject = String(data.get('subject') ?? '').trim()
     const message = String(data.get('message') ?? '').trim()
+    const gotcha = String(data.get('_gotcha') ?? '')
     setStatus({ state: 'sending' })
     try {
       const response = await fetch(FORMSPREE_ENDPOINT, {
@@ -55,6 +56,7 @@ export default function ContactPage() {
           _subject: subject || `New project inquiry from ${name || 'your portfolio'}`,
           message: `${message}\n\nBudget: ${budget}`,
           budget,
+          _gotcha: gotcha,
         }),
       })
       if (!response.ok) {
@@ -170,6 +172,14 @@ export default function ContactPage() {
           {/* Right Column: Premium Form */}
           <div className="rounded-xl border border-neutral-200/80 bg-white p-8 shadow-xs md:p-10 lg:col-span-7">
             <form onSubmit={handleSubmit} className="flex flex-col space-y-6">
+              {/* Honeypot: bots fill this, humans never see it */}
+              <input
+                type="text"
+                name="_gotcha"
+                style={{ display: 'none' }}
+                tabIndex={-1}
+                autoComplete="off"
+              />
               {/* Field 01: Name */}
               <div className="flex flex-col space-y-2">
                 <label
