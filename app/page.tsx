@@ -1,13 +1,23 @@
 "use client"
 
+import dynamic from "next/dynamic"
 import { Hero } from "@/components/hero"
 import { LogoMarquee } from "@/components/logo-marquee"
-import { Work } from "@/components/work"
-import { Services } from "@/components/services"
-import { About } from "@/components/about"
-import { EducationTimeline } from "@/components/education-timeline"
-import { HomeFaq } from "@/components/home-faq"
-import { MainCTA } from "@/components/contact-cta"
+
+/**
+ * Below-the-fold sections are code-split so the initial bundle carries only
+ * the hero + marquee. Each lazy section renders on the server (ssr: true, the
+ * default) so desktop layout, breakpoints and content order are identical —
+ * only the JS delivery is deferred.
+ */
+const Work = dynamic(() => import("@/components/work").then((m) => m.Work))
+const Services = dynamic(() => import("@/components/services").then((m) => m.Services))
+const About = dynamic(() => import("@/components/about").then((m) => m.About))
+const EducationTimeline = dynamic(() =>
+  import("@/components/education-timeline").then((m) => m.EducationTimeline),
+)
+const HomeFaq = dynamic(() => import("@/components/home-faq").then((m) => m.HomeFaq))
+const MainCTA = dynamic(() => import("@/components/contact-cta").then((m) => m.MainCTA))
 
 export default function Page() {
   return (

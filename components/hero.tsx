@@ -1,4 +1,5 @@
-import PixelBlast from "@/components/PixelBlast"
+import Image from "next/image"
+import { PixelBlastLazy } from "@/components/pixel-blast-lazy"
 import { CircularText } from "@/components/circular-text"
 import { site } from "@/lib/site"
 
@@ -14,7 +15,7 @@ export function Hero() {
     >
       {/* Background Effect */}
       <div className="absolute inset-0 z-0">
-        <PixelBlast
+        <PixelBlastLazy
           variant="circle"
           pixelSize={4}
           color="#6366f1"
@@ -34,10 +35,13 @@ export function Hero() {
 
       {/* HERO PHOTO CONTAINER: stacked flow on mobile, absolute split on desktop */}
       <div className="pointer-events-none relative order-2 flex h-[46svh] w-full items-end justify-center lg:absolute lg:bottom-0 lg:right-0 lg:z-10 lg:h-full lg:w-1/2 lg:justify-end">
-        <img
+        <Image
           src="/hero-photo.png"
           alt="Masabur Rahman Sifat — Creative Engineer & UI/UX Designer"
-          fetchPriority="high"
+          width={2559}
+          height={1440}
+          priority
+          sizes="(max-width: 1024px) 100vw, 50vw"
           decoding="async"
           className="h-full w-full object-contain object-bottom select-none filter drop-shadow-2xl animate-rise-in [animation-delay:360ms] origin-bottom scale-105 sm:scale-115 lg:h-[92vh] lg:w-auto lg:max-w-none lg:scale-125 lg:translate-x-44 xl:translate-x-52"
         />
