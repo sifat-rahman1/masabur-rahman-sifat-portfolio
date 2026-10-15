@@ -41,9 +41,10 @@ export function Hero() {
           width={2559}
           height={1440}
           priority
-          sizes="(max-width: 1024px) 100vw, 50vw"
+          quality={100}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
           decoding="async"
-          className="h-full w-full object-contain object-bottom select-none filter drop-shadow-2xl animate-rise-in [animation-delay:360ms] origin-bottom scale-105 sm:scale-115 lg:h-[92vh] lg:w-auto lg:max-w-none lg:scale-125 lg:translate-x-44 xl:translate-x-52"
+          className="h-full w-full object-contain object-bottom [-webkit-image-rendering:-webkit-optimize-contrast] [image-rendering:-webkit-optimize-contrast] select-none filter drop-shadow-2xl animate-rise-in [animation-delay:360ms] origin-bottom scale-105 sm:scale-115 lg:h-[92vh] lg:w-auto lg:max-w-none lg:scale-125 lg:translate-x-44 xl:translate-x-52"
         />
 
         {/* Rotating Circular Text Badge over the shoulder/chest area */}
