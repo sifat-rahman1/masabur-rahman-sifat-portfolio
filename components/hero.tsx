@@ -42,8 +42,10 @@ export function Hero() {
           height={1440}
           priority
           quality={100}
+          unoptimized
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
           decoding="async"
+          style={{ imageRendering: "-webkit-optimize-contrast" }}
           className="h-full w-full object-contain object-bottom [-webkit-image-rendering:-webkit-optimize-contrast] [image-rendering:-webkit-optimize-contrast] select-none filter drop-shadow-2xl animate-rise-in [animation-delay:360ms] origin-bottom scale-105 sm:scale-115 lg:h-[92vh] lg:w-auto lg:max-w-none lg:scale-125 lg:translate-x-44 xl:translate-x-52"
         />
 
