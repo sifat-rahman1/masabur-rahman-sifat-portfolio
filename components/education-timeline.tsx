@@ -28,28 +28,28 @@ const MILESTONES: Milestone[] = [
     title: "Secondary School Foundations",
     subheading: "H.M.P Government High School",
     description:
-      "Core analytical studies, mathematics, and early computer fundamentals that sparked a deep interest in software and technology.",
+      "Built a strong background in mathematics, logic, and core computing fundamentals that started my journey in tech.",
   },
   {
     icon: Cpu,
     title: "Secondary School Certificate (SSC) in Technical Studies",
     subheading: "Kachua Government Technical School & College",
     description:
-      "Practical technical training, computer science basics, and vocational engineering fundamentals with a strong focus on applied problem-solving.",
+      "Focused on practical computer science basics, hands-on technical training, and real-world problem solving.",
   },
   {
     icon: Laptop,
     title: "Intensive Computer Science & Electronics Coursework",
     subheading: "Technical Polytechnic Foundations",
     description:
-      "Immersive technical curriculum covering core computer science concepts, digital logic, and hardware fundamentals — building a strong foundation before pivoting into accelerated, real-world product development.",
+      "Studied computer science theory, digital hardware, and programming before jumping directly into building web products.",
   },
   {
     icon: Rocket,
     title: "HSC Vocational — Technical Engineering & Real-World Practice",
     subheading: "Advanced Applied Specialization (Present)",
     description:
-      "Structuring academic growth around direct industry execution — combining technical coursework with modern frontend development, UI/UX engineering, and client product delivery.",
+      "Combined coursework with active web design, modern frontend development, and delivering client projects.",
   },
 ]
 

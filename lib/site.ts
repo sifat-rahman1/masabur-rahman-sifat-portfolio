@@ -43,7 +43,7 @@ export const site = {
       email: "masabur.rahman.sifat@outlook.com",
       location: "Bangladesh \u2022 UTC+6",
       blurb:
-        "Available for international design systems, editorial web engineering, and select architectural commissions.",
+        "Available for freelance web development, UI/UX design systems, and client site collaborations worldwide.",
     },
     columns: [
       {
