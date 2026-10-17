@@ -42,7 +42,7 @@ const SERVICE_CARDS: ServiceCardData[] = [
     deliverables: ['Design System Tokens', 'Figma Wireframes & Prototyping', 'Responsive Art Direction', 'A11y Accessibility Focus'],
     bgColor: 'bg-emerald-500', // Solid Bright Mint/Emerald
     borderAccent: 'border-emerald-600/30',
-    isDarkText: true,
+    isDarkText: false,
   },
   {
     id: 3,
@@ -53,7 +53,7 @@ const SERVICE_CARDS: ServiceCardData[] = [
     deliverables: ['Editorial Portfolios & Posters', '3D Layer Composition', 'Brand Guidelines & Identity', 'Vector Iconography & Assets'],
     bgColor: 'bg-orange-500', // Solid Vibrant Coral/Tangerine
     borderAccent: 'border-orange-600/30',
-    isDarkText: true,
+    isDarkText: false,
   },
   {
     id: 4,
@@ -64,7 +64,7 @@ const SERVICE_CARDS: ServiceCardData[] = [
     deliverables: ['Multi-Agent Automations', 'Custom Tooling & Webhooks', 'Structured LLM Pipelines', 'Zero-Manual Overhead'],
     bgColor: 'bg-yellow-400', // Solid Cyber Yellow
     borderAccent: 'border-yellow-500/40',
-    isDarkText: true,
+    isDarkText: false,
   },
 ]
 
