@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useEffect, useRef, useCallback, useMemo } from "react"
+import Image from "next/image"
 import "./ProfileCard.css"
 
 const clamp = (v: number, min = 0, max = 100) => Math.min(Math.max(v, min), max)
@@ -184,16 +185,15 @@ const ProfileCardComponent = ({
             {/* Main Portrait with Fade Mask */}
             <div className="pc-avatar-container">
               {avatarUrlRef && (
-                /* The plate is sized entirely by ProfileCard.css (`.avatar`), and the
-                   src is caller-overridable: a host outside images.remotePatterns
-                   would make next/image throw at runtime, so the element stays an
-                   <img> rather than trading a working card for an optimization. */
-                /* eslint-disable-next-line @next/next/no-img-element */
-                <img
+                <Image
                   className="avatar"
                   src={avatarUrlRef}
                   alt={`${name} portrait`}
-                  loading="eager"
+                  width={350}
+                  height={467}
+                  sizes="(max-width: 768px) 92vw, 350px"
+                  loading="lazy"
+                  style={{ height: "auto" }}
                   onError={() => {
                     console.error("Failed to load profile image path:", avatarUrlRef)
                   }}
@@ -206,10 +206,15 @@ const ProfileCardComponent = ({
               <div className="pc-user-info">
                 <div className="pc-user-details">
                   <div className="pc-mini-avatar">
-                    {/* 24-28px, sized by .pc-mini-avatar in ProfileCard.css; same
-                        next/image constraint as the main plate above. */}
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={miniAvatarUrlRef} alt={name} />
+                    {/* 24-28px, sized by .pc-mini-avatar in ProfileCard.css. */}
+                    <Image
+                      src={miniAvatarUrlRef}
+                      alt={name}
+                      width={72}
+                      height={72}
+                      sizes="36px"
+                      loading="lazy"
+                    />
                   </div>
                   <div className="pc-user-text">
                     <span className="pc-handle">@{handle}</span>

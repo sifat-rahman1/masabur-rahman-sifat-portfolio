@@ -127,7 +127,7 @@ export function WorkList() {
                 alt={activeProject.title}
                 src={activeProject.fullScreenshot}
                 fill
-                priority
+                loading="lazy"
                 sizes="480px"
                 className="h-full w-full object-cover object-top"
               />

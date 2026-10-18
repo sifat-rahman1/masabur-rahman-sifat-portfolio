@@ -55,14 +55,6 @@ export const metadata: Metadata = {
   applicationName: site.name,
   authors: [{ name: "Masabur Rahman Sifat" }],
   creator: "Masabur Rahman Sifat",
-  keywords: [
-    "Masabur Rahman Sifat",
-    "Frontend Engineer Bangladesh",
-    "UI/UX Designer",
-    "Creative Developer Portfolio",
-    "Next.js Developer",
-    "Tailwind CSS Specialist",
-  ],
   alternates: {
     canonical: "/",
   },

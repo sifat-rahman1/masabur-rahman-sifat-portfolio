@@ -20,6 +20,7 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 
 /** Expected photo location — see setup note above. */
 const SRC = "/hero-portrait.jpg"
@@ -35,12 +36,13 @@ export function PortraitBackground() {
       {/* Hero photograph — full-bleed, covers entire area without distortion.
           Hidden on load error: a missing file must never show a broken icon. */}
       {!missing ? (
-        // eslint-disable-next-line @next/next/no-img-element -- same reasoning as before: keeps next/image remotePatterns out of the swap, and the plain element keeps the media swap literal.
-        <img
+        <Image
           src={SRC}
           alt=""
+          fill
+          sizes="100vw"
           decoding="async"
-          fetchPriority="high"
+          priority={false}
           onError={() => setMissing(true)}
           className="h-full w-full object-cover object-center"
         />

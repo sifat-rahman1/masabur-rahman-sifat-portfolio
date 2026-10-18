@@ -501,8 +501,8 @@ export default function NebulaCaseStudy() {
               fill
               sizes="(min-width: 1280px) 1200px, 100vw"
               quality={80}
+              loading="lazy"
               className="object-cover object-top"
-              priority
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
           </div>

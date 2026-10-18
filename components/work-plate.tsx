@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { FitText } from "@/components/fit-text"
 import type { Project } from "@/lib/projects"
 
@@ -73,13 +74,14 @@ function WorkMedia({ project }: { project: Project }) {
   }
 
   return (
-    // eslint-disable-next-line @next/next/no-img-element -- same reasoning as portrait-plate: it keeps next/image's remotePatterns out of the swap, and the plain element keeps the <video> branch above literally plug-and-play.
-    <img
+    <Image
       src={media.src}
       alt=""
       aria-hidden="true"
       decoding="async"
       loading="lazy"
+      fill
+      sizes="(max-width: 1024px) 100vw, 50vw"
       className="absolute inset-0 h-full w-full object-cover object-top"
     />
   )
