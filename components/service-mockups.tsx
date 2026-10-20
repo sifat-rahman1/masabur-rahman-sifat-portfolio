@@ -3,8 +3,6 @@
 import React from 'react'
 import Image from 'next/image'
 import {
-  Code2,
-  ExternalLink,
   Layers,
   Sparkles,
   Sliders,
@@ -17,78 +15,16 @@ import {
 /** Canvas 1: Split-pane IDE + Live dark preview widget */
 export function WebDevMockup() {
   return (
-    <div className="w-full h-full min-h-[280px] md:min-h-[320px] flex flex-col md:flex-row gap-4 p-4 rounded-lg bg-zinc-950 border border-black/30 shadow-2xl overflow-hidden text-white">
-      {/* Left side: Dark IDE Window */}
-      <div className="flex-1 flex flex-col rounded-md bg-[#000000] border border-white/10 overflow-hidden font-mono text-xs">
-        <div className="flex items-center justify-between px-3 py-2 bg-neutral-900 border-b border-white/10 text-neutral-400">
-          <div className="flex items-center gap-1.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80 inline-block" />
-            <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80 inline-block" />
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80 inline-block" />
-            <span className="ml-2 text-[11px] text-neutral-300 font-sans flex items-center gap-1">
-              <Code2 className="w-3 h-3 text-purple-400" /> Page.tsx
-            </span>
-          </div>
-          <span className="text-[10px] text-neutral-500">Next.js 16</span>
-        </div>
-        <div className="p-3.5 space-y-1.5 text-[11px] leading-relaxed text-neutral-300 overflow-x-hidden">
-          <p className="text-neutral-500">{"// 1. Fluid physics"}</p>
-          <p>
-            <span className="text-purple-400">export function</span>{' '}
-            <span className="text-blue-400">Experience</span>() &#123;
-          </p>
-          <p className="pl-3">
-            <span className="text-purple-400">const</span> &#123; scrollY &#125; ={' '}
-            <span className="text-amber-300">useScroll</span>()
-          </p>
-          <p className="pl-3">
-            <span className="text-purple-400">return</span> (
-          </p>
-          <p className="pl-6 text-emerald-400">
-            &lt;<span className="text-rose-400">motion.div</span>
-          </p>
-          <p className="pl-8 text-neutral-400">
-            animate=&#123;&#123; <span className="text-cyan-300">fps</span>: 120 &#125;&#125;
-          </p>
-          <p className="pl-6 text-emerald-400">
-            &gt; Ready &lt;/<span className="text-rose-400">motion.div</span>&gt;
-          </p>
-          <p className="pl-3">&#41;</p>
-          <p>&#125;</p>
-        </div>
-      </div>
-
-      {/* Right side: Live solid dark UI widget */}
-      <div className="flex-1 flex flex-col justify-between p-4 rounded-md bg-[#000000] border border-blue-500/30 relative overflow-hidden group">
-        <div className="relative z-10 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="text-[11px] font-medium tracking-wider text-emerald-300 uppercase">Live Preview</span>
-          </div>
-          <span className="px-2 py-0.5 rounded-sm text-[10px] bg-purple-500/20 text-purple-200 border border-purple-400/30">
-            v2.4
-          </span>
-        </div>
-
-        <div className="relative z-10 my-auto py-3 space-y-2.5">
-          <div className="flex items-baseline justify-between">
-            <span className="text-xs text-neutral-300 font-sans">FPS Render Rate</span>
-            <span className="text-lg font-mono font-bold text-white">120.4 <span className="text-xs text-purple-300 font-normal">Hz</span></span>
-          </div>
-          <div className="w-full h-1.5 rounded-full bg-neutral-800 overflow-hidden">
-            <div className="h-full w-[94%] bg-blue-500 rounded-full" />
-          </div>
-          <div className="flex justify-between text-[10px] text-neutral-400">
-            <span>Latency: 0.8ms</span>
-            <span className="text-emerald-400">GPU Accelerated</span>
-          </div>
-        </div>
-
-        <div className="relative z-10 pt-2 border-t border-white/10 flex items-center justify-between text-[11px] text-neutral-300">
-          <span>Stitch Editorial</span>
-          <ExternalLink className="w-3.5 h-3.5 text-blue-400" />
-        </div>
-      </div>
+    <div className="relative w-full overflow-hidden rounded-2xl shadow-2xl border border-white/20 bg-white/5 backdrop-blur-sm">
+      <Image
+        src="/web-dev.png"
+        alt="Web Development Showcase by Masabur Rahman Sifat"
+        width={1200}
+        height={800}
+        sizes="(max-width: 768px) 100vw, 50vw"
+        loading="lazy"
+        className="w-full h-auto object-cover rounded-2xl select-none"
+      />
     </div>
   )
 }
