@@ -1,11 +1,10 @@
 ﻿'use client'
 
 import React from 'react'
+import Image from 'next/image'
 import {
   Code2,
   ExternalLink,
-  Palette,
-  MousePointer2,
   Layers,
   Sparkles,
   Sliders,
@@ -97,56 +96,25 @@ export function WebDevMockup() {
 /** Canvas 2: Figma-style canvas with guides & custom cursor pill */
 export function UiUxMockup() {
   return (
-    <div className="w-full h-full min-h-[280px] md:min-h-[320px] relative p-5 rounded-lg bg-zinc-950 border border-black/30 shadow-2xl overflow-hidden flex items-center justify-center text-white">
-      <div
-        className="absolute inset-0 opacity-20 pointer-events-none"
-        style={{
-          backgroundImage: 'radial-gradient(circle, #ffffff 1px, transparent 1px)',
-          backgroundSize: '18px 18px',
-        }}
-      />
-
-      <div className="absolute inset-x-8 top-1/2 -translate-y-1/2 h-[1px] border-b border-dashed border-emerald-400/50 pointer-events-none" />
-      <div className="absolute inset-y-8 left-1/2 -translate-x-1/2 w-[1px] border-r border-dashed border-emerald-400/50 pointer-events-none" />
-
-      <div className="absolute top-2 left-3 text-[10px] font-mono text-emerald-400">X: 480 · Y: 320</div>
-      <div className="absolute bottom-2 right-3 text-[10px] font-mono text-neutral-400">100%</div>
-
-      <div className="relative z-10 w-full max-w-[260px] p-4 rounded-md bg-[#000000] border border-emerald-500/40 shadow-2xl space-y-3">
-        <div className="absolute -top-1 -left-1 w-2 h-2 bg-emerald-400 border border-black" />
-        <div className="absolute -top-1 -right-1 w-2 h-2 bg-emerald-400 border border-black" />
-        <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-emerald-400 border border-black" />
-        <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-emerald-400 border border-black" />
-
-        <div className="flex items-center justify-between pb-2 border-b border-white/10">
-          <span className="text-xs font-medium text-white flex items-center gap-1.5">
-            <Palette className="w-3.5 h-3.5 text-emerald-400" />
-            Modal.Variant
-          </span>
-          <span className="text-[10px] text-emerald-400 font-mono">Auto Layout</span>
-        </div>
-
-        <div className="space-y-2">
-          <div className="h-4 w-3/4 rounded-sm bg-neutral-800" />
-          <div className="h-2.5 w-full rounded-sm bg-neutral-800/80" />
-          <div className="h-2.5 w-4/5 rounded-sm bg-neutral-800/80" />
-        </div>
-
-        <div className="flex gap-2 pt-1">
-          <div className="flex-1 py-1.5 rounded-sm bg-emerald-500 text-black text-[11px] font-semibold text-center">
-            Confirm
+    <div className="w-full h-full min-h-[280px] md:min-h-[320px] p-4 rounded-lg bg-zinc-950 border border-black/30 shadow-2xl overflow-hidden flex items-center justify-center">
+      <div className="w-full rounded-xl border border-white/10 shadow-2xl overflow-hidden bg-black">
+        <div className="flex items-center justify-between px-3 py-2 bg-neutral-900 border-b border-white/10 text-neutral-400">
+          <div className="flex items-center gap-1.5">
+            <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80 inline-block" />
+            <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80 inline-block" />
+            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80 inline-block" />
           </div>
-          <div className="px-3 py-1.5 rounded-sm border border-white/10 text-neutral-400 text-[11px] text-center">
-            Discard
-          </div>
+          <span className="text-[10px]">UI/UX Bento - Figma Export</span>
         </div>
-      </div>
-
-      <div className="absolute top-[32%] right-[16%] md:right-[20%] z-20 flex items-start gap-1 pointer-events-none drop-shadow-xl animate-bounce">
-        <MousePointer2 className="w-4 h-4 text-emerald-400 fill-emerald-400" />
-        <div className="px-2 py-0.5 rounded-full bg-emerald-400 text-neutral-950 font-semibold text-[11px] tracking-wide shadow-md whitespace-nowrap">
-          Sifat (Designing)
-        </div>
+        <Image
+          src="/bento-ui.png"
+          alt="UI/UX Design Bento Mockup by Masabur Rahman Sifat"
+          width={977}
+          height={519}
+          sizes="(max-width: 768px) 100vw, 50vw"
+          loading="lazy"
+          className="w-full h-auto object-contain rounded-b-xl select-none"
+        />
       </div>
     </div>
   )
