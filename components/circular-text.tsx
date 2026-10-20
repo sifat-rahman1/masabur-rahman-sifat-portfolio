@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import { motion, useReducedMotion } from 'motion/react'
+import { useIsMobile } from '@/hooks/use-is-mobile'
 
 interface CircularTextProps {
   text: string
@@ -18,6 +19,9 @@ export function CircularText({
   const total = letters.length
   const [isHovered, setIsHovered] = useState(false)
   const reduceMotion = useReducedMotion()
+  const isMobile = useIsMobile()
+  // Mobile: static badge, no infinite rotation loop on the main thread.
+  const staticBadge = reduceMotion || isMobile
 
   return (
     <div
@@ -26,7 +30,7 @@ export function CircularText({
       onMouseLeave={() => setIsHovered(false)}
     >
       <motion.div
-        animate={reduceMotion ? undefined : { rotate: 360 }}
+        animate={staticBadge ? undefined : { rotate: 360 }}
         transition={{
           duration: isHovered ? spinDuration / 3 : spinDuration,
           repeat: Infinity,

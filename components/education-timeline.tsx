@@ -9,6 +9,7 @@ import {
   useSpring,
 } from "framer-motion"
 import { Cpu, Laptop, Rocket, School, type LucideIcon } from "lucide-react"
+import { useIsMobile } from "@/hooks/use-is-mobile"
 
 type Milestone = {
   icon: LucideIcon
@@ -107,11 +108,12 @@ type TimelineItemProps = {
 function TimelineItem({ milestone }: TimelineItemProps) {
   const itemRef = useRef<HTMLLIElement>(null)
   const reduceMotion = useReducedMotion() ?? false
+  const isMobile = useIsMobile()
   const isInView = useInView(itemRef, {
     margin: ITEM_VIEW_MARGIN,
     once: false,
   })
-  const active = reduceMotion || isInView
+  const active = reduceMotion || isMobile || isInView
   const Icon = milestone.icon
 
   return (
@@ -155,6 +157,7 @@ function TimelineItem({ milestone }: TimelineItemProps) {
 export function EducationTimeline() {
   const containerRef = useRef<HTMLDivElement>(null)
   const reduceMotion = useReducedMotion() ?? false
+  const isMobile = useIsMobile()
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -186,7 +189,7 @@ export function EducationTimeline() {
             className="pointer-events-none absolute inset-y-0 left-6 -ml-px w-0.5 md:left-7"
           >
             <div className="absolute inset-0 bg-zinc-200" />
-            {reduceMotion ? (
+            {reduceMotion || isMobile ? (
               <div className="absolute inset-0 bg-zinc-950" />
             ) : (
               <motion.div

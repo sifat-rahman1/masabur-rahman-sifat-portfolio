@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import { useIsMobile } from "@/hooks/use-is-mobile"
 
 const WORDS = ["Welcome", "Bienvenido", "Benvenuto", "Bem-vindo", "नमस्ते", "স্বাগতম"] as const
 
@@ -12,6 +13,9 @@ interface PreloaderProps {
 export default function Preloader({ onComplete }: PreloaderProps) {
   const [index, setIndex] = useState(0)
   const [isExiting, setIsExiting] = useState(false)
+  const isMobile = useIsMobile()
+  // Mobile phones skip the slow word-by-word cycle: one beat, then exit.
+  const stepMs = isMobile ? 120 : 420
 
   useEffect(() => {
     document.body.style.overflow = "hidden"
@@ -19,15 +23,15 @@ export default function Preloader({ onComplete }: PreloaderProps) {
     if (index < WORDS.length - 1) {
       const timeout = setTimeout(() => {
         setIndex((prev) => prev + 1)
-      }, 420)
+      }, stepMs)
       return () => clearTimeout(timeout)
     } else {
       const exitTimeout = setTimeout(() => {
         setIsExiting(true)
-      }, 420)
+      }, stepMs)
       return () => clearTimeout(exitTimeout)
     }
-  }, [index])
+  }, [index, stepMs])
 
   return (
     <AnimatePresence

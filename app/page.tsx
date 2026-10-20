@@ -10,14 +10,27 @@ import { LogoMarquee } from "@/components/logo-marquee"
  * default) so desktop layout, breakpoints and content order are identical —
  * only the JS delivery is deferred.
  */
-const Work = dynamic(() => import("@/components/work").then((m) => m.Work))
-const Services = dynamic(() => import("@/components/services").then((m) => m.Services))
-const About = dynamic(() => import("@/components/about").then((m) => m.About))
-const EducationTimeline = dynamic(() =>
-  import("@/components/education-timeline").then((m) => m.EducationTimeline),
+const Work = dynamic(() => import("@/components/work").then((m) => m.Work), {
+  loading: () => <div className="min-h-[200px]" />,
+})
+const Services = dynamic(
+  () => import("@/components/services").then((m) => m.Services),
+  { loading: () => <div className="min-h-[200px]" /> },
 )
-const HomeFaq = dynamic(() => import("@/components/home-faq").then((m) => m.HomeFaq))
-const MainCTA = dynamic(() => import("@/components/contact-cta").then((m) => m.MainCTA))
+const About = dynamic(() => import("@/components/about").then((m) => m.About), {
+  loading: () => <div className="min-h-[200px]" />,
+})
+const EducationTimeline = dynamic(
+  () => import("@/components/education-timeline").then((m) => m.EducationTimeline),
+  { loading: () => <div className="min-h-[200px]" /> },
+)
+const HomeFaq = dynamic(() => import("@/components/home-faq").then((m) => m.HomeFaq), {
+  loading: () => <div className="min-h-[200px]" />,
+})
+const MainCTA = dynamic(
+  () => import("@/components/contact-cta").then((m) => m.MainCTA),
+  { loading: () => <div className="min-h-[200px]" /> },
+)
 
 export default function Page() {
   return (

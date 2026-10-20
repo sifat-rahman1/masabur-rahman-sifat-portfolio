@@ -1,7 +1,8 @@
 'use client'
 
 import React from 'react'
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
+import { useIsMobile } from '@/hooks/use-is-mobile'
 
 interface FoldTextProps {
   text?: string
@@ -10,6 +11,11 @@ interface FoldTextProps {
 }
 
 export function FoldText({ text, children, className = '' }: FoldTextProps) {
+  const reduceMotion = useReducedMotion()
+  const isMobile = useIsMobile()
+  // Mobile + reduced-motion fallback: plain static text, no per-word
+  // IntersectionObservers or spring frames — pure CSS paint only.
+  const staticText = reduceMotion || isMobile
   // Extract string content cleanly
   const extractText = (node: React.ReactNode): string => {
     if (typeof node === 'string') return node
@@ -26,6 +32,11 @@ export function FoldText({ text, children, className = '' }: FoldTextProps) {
   // Fail-safe: If no plain text string is present, render children directly without hiding
   if (!rawText) {
     return <span className={className}>{children}</span>
+  }
+
+  // Mobile + reduced-motion fallback: static text, zero observers or springs.
+  if (staticText) {
+    return <span className={`inline-block max-w-full ${className}`}>{rawText}</span>
   }
 
   const words = rawText.split(' ')

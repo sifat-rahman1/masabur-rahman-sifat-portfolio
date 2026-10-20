@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { PixelBlastLazy } from "@/components/pixel-blast-lazy"
+import { HeroBackground } from "@/components/hero-background"
 import { CircularText } from "@/components/circular-text"
 import { site } from "@/lib/site"
 
@@ -15,7 +15,7 @@ export function Hero() {
     >
       {/* Background Effect */}
       <div className="absolute inset-0 z-0">
-        <PixelBlastLazy
+        <HeroBackground
           variant="circle"
           pixelSize={4}
           color="#6366f1"
@@ -34,7 +34,7 @@ export function Hero() {
       </div>
 
       {/* HERO PHOTO CONTAINER: stacked flow on mobile, absolute split on desktop */}
-      <div className="pointer-events-none relative order-2 flex h-[46svh] w-full items-end justify-center lg:absolute lg:bottom-0 lg:right-0 lg:z-10 lg:h-full lg:w-1/2 lg:justify-end">
+      <div className="pointer-events-none relative order-2 flex h-auto w-full items-end justify-center lg:absolute lg:bottom-0 lg:right-0 lg:z-10 lg:h-full lg:w-1/2 lg:justify-end">
         <Image
           src="/hero-photo.png"
           alt="Masabur Rahman Sifat — Creative Engineer & UI/UX Designer"
@@ -43,10 +43,11 @@ export function Hero() {
           priority
           quality={100}
           unoptimized
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
+          sizes="(max-width: 768px) 85vw, (max-width: 1200px) 50vw, 800px"
           decoding="async"
+          fetchPriority="high"
           style={{ imageRendering: "-webkit-optimize-contrast" }}
-          className="h-full w-full object-contain object-bottom [-webkit-image-rendering:-webkit-optimize-contrast] [image-rendering:-webkit-optimize-contrast] select-none filter drop-shadow-2xl animate-rise-in [animation-delay:360ms] origin-bottom scale-105 sm:scale-115 lg:h-[92vh] lg:w-auto lg:max-w-none lg:scale-125 lg:translate-x-44 xl:translate-x-52"
+          className="h-auto w-[85vw] max-w-[340px] sm:max-w-[420px] mx-auto object-cover object-top [-webkit-image-rendering:-webkit-optimize-contrast] [image-rendering:-webkit-optimize-contrast] select-none filter drop-shadow-2xl animate-rise-in [animation-delay:360ms] origin-bottom lg:mx-0 lg:h-[92vh] lg:w-auto lg:max-w-none lg:scale-125 lg:translate-x-44 lg:object-contain lg:object-bottom xl:translate-x-52"
         />
 
         {/* Rotating Circular Text Badge over the shoulder/chest area */}

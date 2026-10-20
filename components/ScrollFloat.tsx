@@ -2,6 +2,7 @@
 
 import React, { useRef, useMemo } from 'react'
 import { motion, useScroll, useTransform, MotionValue } from 'framer-motion'
+import { useIsMobile } from '@/hooks/use-is-mobile'
 
 export interface ScrollFloatProps {
   /** The text string to animate on scroll */
@@ -47,6 +48,7 @@ export function ScrollFloat({
   textClassName = '',
 }: ScrollFloatProps) {
   const containerRef = useRef<HTMLHeadingElement>(null)
+  const isMobile = useIsMobile()
 
   // Track the element's position relative to the viewport
   // Animation triggers as container enters bottom ("start end") until it reaches center/top ("end center")
@@ -61,6 +63,18 @@ export function ScrollFloat({
   // Compute absolute character offset for consistent stagger index across words
   let charCounter = 0
   const totalChars = text.replace(/\s+/g, '').length || 1
+
+  // Mobile fallback: static text, no scroll listeners or per-char springs.
+  if (isMobile) {
+    return (
+      <h3
+        ref={containerRef}
+        className={`relative inline-block leading-[1.12] tracking-tight ${className}`}
+      >
+        {text}
+      </h3>
+    )
+  }
 
   return (
     <h3

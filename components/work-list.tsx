@@ -10,6 +10,7 @@ import {
   useReducedMotion,
   useSpring,
 } from 'motion/react'
+import { useIsMobile } from '@/hooks/use-is-mobile'
 
 interface Project {
   id: string
@@ -60,6 +61,8 @@ const projects: Project[] = [
 export function WorkList() {
   const [activeProject, setActiveProject] = useState<Project | null>(null)
   const reduceMotion = useReducedMotion()
+  const isMobile = useIsMobile()
+  // Mobile + reduced-motion: no cursor tracking, no floating preview card.
 
   // Cursor position tracking with smooth spring motion
   const mouseX = useMotionValue(0)
@@ -70,7 +73,7 @@ export function WorkList() {
   const cursorY = useSpring(mouseY, springConfig)
 
   useEffect(() => {
-    if (reduceMotion) return
+    if (reduceMotion || isMobile) return
     const handleMouseMove = (e: MouseEvent) => {
       mouseX.set(e.clientX + 20)
       mouseY.set(e.clientY - 130)
@@ -78,7 +81,7 @@ export function WorkList() {
 
     window.addEventListener('mousemove', handleMouseMove)
     return () => window.removeEventListener('mousemove', handleMouseMove)
-  }, [mouseX, mouseY, reduceMotion])
+  }, [mouseX, mouseY, reduceMotion, isMobile])
 
   return (
     <section className="relative w-full bg-white px-4 pt-12 pb-6 md:px-12 md:pt-16 md:pb-8">
@@ -108,7 +111,7 @@ export function WorkList() {
 
       {/* Floating Static 16:9 Hero Preview Card */}
       <AnimatePresence>
-        {activeProject && !reduceMotion && (
+        {activeProject && !reduceMotion && !isMobile && (
           <motion.div
             style={{
               x: cursorX,

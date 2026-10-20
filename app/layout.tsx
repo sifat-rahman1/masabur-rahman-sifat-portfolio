@@ -201,6 +201,8 @@ export default function RootLayout({
       className={cn("antialiased", inter.variable, playfair.variable, plusJakarta.variable)}
     >
       <head>
+        <link rel="preconnect" href="https://formspree.io" />
+        <link rel="dns-prefetch" href="https://formspree.io" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

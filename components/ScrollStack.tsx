@@ -2,6 +2,7 @@
 
 import React, { useRef } from 'react'
 import { motion, useScroll, useTransform, MotionValue } from 'framer-motion'
+import { useIsMobile } from '@/hooks/use-is-mobile'
 import {
   WebDevMockup,
   UiUxMockup,
@@ -94,6 +95,7 @@ function StackCard({ card, index, total, progress }: StackCardProps) {
   const step = 1 / total
   const cardStart = index * step
   const nextCardStart = (index + 1) * step
+  const isMobile = useIsMobile()
 
   // Desktop-only sticky offsets: static classes keep Tailwind JIT picking
   // each variant up. Mobile stays in normal flow (relative, no offset).
@@ -117,6 +119,77 @@ function StackCard({ card, index, total, progress }: StackCardProps) {
   )
 
   const filter = useTransform(brightness, (b) => `brightness(${b})`)
+
+  if (isMobile) {
+    return (
+      <article
+        className={`relative w-full overflow-hidden rounded-sm border p-6 sm:p-8 ${card.bgColor} ${card.borderAccent} ${
+          card.isDarkText ? 'text-zinc-950' : 'text-white'
+        }`}
+      >
+        <div className="relative z-10 grid grid-cols-1 gap-8 items-center">
+          <div className="space-y-4">
+            <div className="flex items-center gap-3">
+              <span
+                className={`font-mono text-xs px-2.5 py-1 rounded-full ${
+                  card.isDarkText
+                    ? 'bg-black/10 border border-black/20 text-zinc-950 font-bold'
+                    : 'bg-white/15 border border-white/25 text-white font-semibold'
+                }`}
+              >
+                {card.index}
+              </span>
+              <span
+                className={`text-xs uppercase tracking-widest font-bold ${
+                  card.isDarkText ? 'text-zinc-950/70' : 'text-white/80'
+                }`}
+              >
+                {card.category}
+              </span>
+            </div>
+            <h3
+              className={`font-display text-2xl sm:text-3xl font-bold tracking-tight leading-tight ${
+                card.isDarkText ? 'text-zinc-950' : 'text-white'
+              }`}
+            >
+              {card.title}
+            </h3>
+            <p
+              className={`text-sm sm:text-base leading-relaxed max-w-[42ch] ${
+                card.isDarkText ? 'text-zinc-950/85 font-medium' : 'text-white/90'
+              }`}
+            >
+              {card.tagline}
+            </p>
+            <div className="pt-2">
+              <span
+                className={`text-[11px] uppercase tracking-wider block mb-2 font-mono font-bold ${
+                  card.isDarkText ? 'text-zinc-950/70' : 'text-white/75'
+                }`}
+              >
+                Core Capabilities
+              </span>
+              <div className="flex flex-wrap gap-2">
+                {card.deliverables.map((item, idx) => (
+                  <span
+                    key={idx}
+                    className={`text-xs px-3 py-1 rounded-sm ${
+                      card.isDarkText
+                        ? 'bg-black/10 border border-black/20 text-zinc-950 font-semibold'
+                        : 'bg-white/15 border border-white/25 text-white font-medium'
+                    }`}
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="w-full">{renderMockup(card.id)}</div>
+        </div>
+      </article>
+    )
+  }
 
   return (
     <motion.div
