@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import React from 'react'
 import Image from 'next/image'
@@ -94,28 +94,19 @@ export function WebDevMockup() {
 }
 
 /** Canvas 2: Figma-style canvas with guides & custom cursor pill */
+/** Canvas 2: Clean Bento UI Figma export - sits directly on green card */
 export function UiUxMockup() {
   return (
-    <div className="w-full h-full min-h-[280px] md:min-h-[320px] p-4 rounded-lg bg-zinc-950 border border-black/30 shadow-2xl overflow-hidden flex items-center justify-center">
-      <div className="w-full rounded-xl border border-white/10 shadow-2xl overflow-hidden bg-black">
-        <div className="flex items-center justify-between px-3 py-2 bg-neutral-900 border-b border-white/10 text-neutral-400">
-          <div className="flex items-center gap-1.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80 inline-block" />
-            <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80 inline-block" />
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80 inline-block" />
-          </div>
-          <span className="text-[10px]">UI/UX Bento - Figma Export</span>
-        </div>
-        <Image
-          src="/bento-ui.png"
-          alt="UI/UX Design Bento Mockup by Masabur Rahman Sifat"
-          width={977}
-          height={519}
-          sizes="(max-width: 768px) 100vw, 50vw"
-          loading="lazy"
-          className="w-full h-auto object-contain rounded-b-xl select-none"
-        />
-      </div>
+    <div className="relative w-full overflow-hidden rounded-2xl shadow-2xl border border-white/20 bg-white/5 backdrop-blur-sm">
+      <Image
+        src="/bento-ui.png"
+        alt="UI/UX Design Bento Mockup by Masabur Rahman Sifat"
+        width={1200}
+        height={800}
+        sizes="(max-width: 768px) 100vw, 50vw"
+        loading="lazy"
+        className="w-full h-auto object-cover rounded-2xl select-none"
+      />
     </div>
   )
 }
