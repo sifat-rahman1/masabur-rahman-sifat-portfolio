@@ -46,85 +46,14 @@ export function UiUxMockup() {
   )
 }
 
-/** Canvas 3: 3D isometric layered breakdown with transform bounding box & handles */
+/** Canvas 3: Graphic Design & Branding Showcase - sits directly on orange card */
 export function GraphicDesignMockup() {
   return (
-    <div className="w-full h-full min-h-[280px] md:min-h-[320px] relative p-6 rounded-lg bg-zinc-950 border border-black/30 shadow-2xl overflow-hidden flex items-center justify-center text-white">
-      <div className="relative w-full max-w-[300px] h-[200px] border border-amber-500/40 rounded-sm p-2 flex items-center justify-center">
-        <div className="absolute -top-1 -left-1 w-2.5 h-2.5 bg-amber-400 border border-neutral-900" />
-        <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-2.5 h-2.5 bg-amber-400 border border-neutral-900" />
-        <div className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-amber-400 border border-neutral-900" />
-        <div className="absolute top-1/2 -left-1 -translate-y-1/2 w-2.5 h-2.5 bg-amber-400 border border-neutral-900" />
-        <div className="absolute top-1/2 -right-1 -translate-y-1/2 w-2.5 h-2.5 bg-amber-400 border border-neutral-900" />
-        <div className="absolute -bottom-1 -left-1 w-2.5 h-2.5 bg-amber-400 border border-neutral-900" />
-        <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2.5 h-2.5 bg-amber-400 border border-neutral-900" />
-        <div className="absolute -bottom-1 -right-1 w-2.5 h-2.5 bg-amber-400 border border-neutral-900" />
-
-        <div
-          className="relative w-[210px] h-[130px]"
-          style={{
-            perspective: '800px',
-            transformStyle: 'preserve-3d',
-          }}
-        >
-          {/* Layer 1: Shadow */}
-          <div
-            className="absolute inset-0 rounded-md bg-[#000000] border border-white/10 p-3 flex flex-col justify-between"
-            style={{
-              transform: 'rotateX(54deg) rotateZ(-38deg) translateZ(-35px)',
-              boxShadow: '0 25px 40px rgba(0,0,0,0.8)',
-            }}
-          >
-            <div className="flex items-center justify-between text-[10px] text-neutral-400 font-mono">
-              <span>01 / Shadow Pass</span>
-              <span className="text-amber-400">Multiply</span>
-            </div>
-            <div className="w-full h-8 rounded-sm bg-neutral-900" />
-          </div>
-
-          {/* Layer 2: Subject */}
-          <div
-            className="absolute inset-0 rounded-md bg-neutral-900 border border-amber-500/40 p-3 flex flex-col justify-between"
-            style={{
-              transform: 'rotateX(54deg) rotateZ(-38deg) translateZ(5px)',
-              boxShadow: '0 15px 30px rgba(0, 0, 0, 0.6)',
-            }}
-          >
-            <div className="flex items-center justify-between text-[10px] text-amber-200 font-mono">
-              <span className="flex items-center gap-1">
-                <Layers className="w-3 h-3 text-amber-400" /> 02 / Subject Hero
-              </span>
-              <span>100%</span>
-            </div>
-            <div className="text-center font-display font-bold text-white text-base tracking-wider uppercase">
-              EDITORIAL
-            </div>
-          </div>
-
-          {/* Layer 3: Glow */}
-          <div
-            className="absolute inset-0 rounded-md bg-neutral-900/90 border border-amber-400/40 p-3 flex flex-col justify-between"
-            style={{
-              transform: 'rotateX(54deg) rotateZ(-38deg) translateZ(45px)',
-            }}
-          >
-            <div className="flex items-center justify-between text-[10px] text-white font-mono">
-              <span className="flex items-center gap-1">
-                <Sparkles className="w-3 h-3 text-amber-300" /> 03 / Specular Highlight
-              </span>
-              <span className="text-amber-300">Solid</span>
-            </div>
-            <div className="w-6 h-6 rounded-full bg-amber-400/30 self-end border border-amber-300/40" />
-          </div>
-        </div>
-      </div>
-      <div className="absolute bottom-3 left-4 text-[11px] text-neutral-400 font-mono flex items-center gap-1.5">
-        <Sliders className="w-3 h-3 text-amber-400" /> Layer Stack
-      </div>
+    <div className="relative w-full overflow-hidden rounded-2xl border border-white/20 shadow-2xl bg-white/5 backdrop-blur-sm">
+      <Image alt="Graphic Design & Branding Showcase by Masabur Rahman Sifat" className="w-full h-auto object-cover rounded-2xl select-none" height={800} priority={false} src="/graphic-brand.png" width={1200} />
     </div>
   )
 }
-
 /** Canvas 4: Node-based workflow diagram with pulsing SVG connectors & glowing status */
 export function AiAutomationMockup() {
   return (
@@ -219,3 +148,5 @@ export function AiAutomationMockup() {
     </div>
   )
 }
+
+
