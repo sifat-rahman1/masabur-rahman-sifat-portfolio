@@ -47,11 +47,8 @@ const SITE_URL =
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://masabur-sifat.vercel.app"),
-  title: {
-    default: site.meta.title,
-    template: "%s | Masabur Rahman Sifat",
-  },
-  description: site.meta.description,
+  title: "Masabur Rahman Sifat — Creative Engineer & UI/UX Designer",
+  description: "I build fast, modern websites that actually work well — not just look good.",
   applicationName: site.name,
   authors: [{ name: "Masabur Rahman Sifat" }],
   creator: "Masabur Rahman Sifat",
@@ -59,11 +56,11 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Masabur Rahman Sifat | Creative Engineer & UI/UX Designer",
-    description: site.meta.description,
+    title: "Masabur Rahman Sifat — Creative Engineer & UI/UX Designer",
+    description: "I build fast, modern websites that actually work well — not just look good.",
     type: "website",
     siteName: 'Masabur Rahman Sifat',
-    url: "/",
+    url: "https://masabur-sifat.vercel.app",
     locale: "en_US",
     images: [
       {
@@ -150,7 +147,7 @@ export default function RootLayout({
         "@id": `${SITE_URL}/#website`,
         url: SITE_URL,
         name: "Masabur Rahman Sifat",
-        alternateName: ["Sifat Portfolio", "Masabur Sifat"],
+        alternateName: ["Masabur Sifat", "Sifat Portfolio"],
         description: "Editorial Portfolio & Creative Engineering by Masabur Rahman Sifat.",
         publisher: {
           "@id": `${SITE_URL}/#person`,
