@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     title: "Masabur Rahman Sifat | Creative Engineer & UI/UX Designer",
     description: site.meta.description,
     type: "website",
-    siteName: site.name,
+    siteName: 'Masabur Rahman Sifat',
     url: "/",
     locale: "en_US",
     images: [
@@ -149,7 +149,8 @@ export default function RootLayout({
         "@type": "WebSite",
         "@id": `${SITE_URL}/#website`,
         url: SITE_URL,
-        name: "Masabur Rahman Sifat ■ Portfolio",
+        name: "Masabur Rahman Sifat",
+        alternateName: ["Sifat Portfolio", "Masabur Sifat"],
         description: "Editorial Portfolio & Creative Engineering by Masabur Rahman Sifat.",
         publisher: {
           "@id": `${SITE_URL}/#person`,
