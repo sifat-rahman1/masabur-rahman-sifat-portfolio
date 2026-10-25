@@ -71,7 +71,7 @@ export const site = {
         links: [
           { label: "GitHub", href: "https://github.com/sifat-rahman1/" },
           { label: "X", href: "/#contact" },
-          { label: "Behance", href: "/#contact" },
+          { label: "Behance", href: "https://www.behance.net/mrkidstar" },
           { label: "Dribbble", href: "/#contact" },
         ],
       },
